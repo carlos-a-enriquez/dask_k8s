@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2023-01-27T15:00:23Z"
+  labels:
+    app: dask
+    app.kubernetes.io/managed-by: Helm
+    chart: dask-2023.1.0
+    component: jupyter
+    heritage: Helm
+    release: myrelease
+  name: nodeport-jupyter
+  namespace: default
+  resourceVersion: "246315"
+  uid: 178c3a81-f8de-4aa4-9088-5206735859f8
+spec:
+  clusterIP: 10.43.85.39
+  clusterIPs:
+  - 10.43.85.39
+  externalTrafficPolicy: Cluster
+  externalIPs:
+  - 192.168.20.47
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 30080
+    port: 80
+    protocol: TCP
+    targetPort: 8888
+  selector:
+    app: dask
+    component: jupyter
+    release: myrelease
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
