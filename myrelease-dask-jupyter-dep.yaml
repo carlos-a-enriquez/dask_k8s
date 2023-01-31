@@ -1,0 +1,89 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+    meta.helm.sh/release-name: myrelease
+    meta.helm.sh/release-namespace: default
+  creationTimestamp: "2023-01-29T14:10:29Z"
+  generation: 1
+  labels:
+    app: dask
+    app.kubernetes.io/managed-by: Helm
+    chart: dask-2023.1.0
+    component: jupyter
+    heritage: Helm
+    release: myrelease
+  name: myrelease-dask-jupyter
+  namespace: default
+  resourceVersion: "754956"
+  uid: 9a1e61f5-cf85-40ff-b794-93e36bf97112
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: dask
+      component: jupyter
+      release: myrelease
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: dask
+        component: jupyter
+        release: myrelease
+    spec:
+      containers:
+      - env:
+        - name: DASK_SCHEDULER_ADDRESS
+          value: myrelease-dask-scheduler:8786
+        image: ghcr.io/dask/dask-notebook:2023.1.0
+        imagePullPolicy: IfNotPresent
+        name: myrelease-dask-jupyter
+        ports:
+        - containerPort: 8888
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /usr/local/etc/jupyter
+          name: config-volume
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      serviceAccount: dask-jupyter
+      serviceAccountName: dask-jupyter
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 420
+          name: myrelease-dask-jupyter-config
+        name: config-volume
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2023-01-29T14:10:32Z"
+    lastUpdateTime: "2023-01-29T14:10:32Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  - lastTransitionTime: "2023-01-29T14:10:29Z"
+    lastUpdateTime: "2023-01-29T14:10:32Z"
+    message: ReplicaSet "myrelease-dask-jupyter-6667cb5dc5" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  observedGeneration: 1
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1

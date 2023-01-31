@@ -1,7 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  creationTimestamp: "2023-01-27T15:00:23Z"
+  annotations:
+    meta.helm.sh/release-name: myrelease
+    meta.helm.sh/release-namespace: default
+  creationTimestamp: "2023-01-29T14:10:28Z"
   labels:
     app: dask
     app.kubernetes.io/managed-by: Helm
@@ -9,23 +12,20 @@ metadata:
     component: jupyter
     heritage: Helm
     release: myrelease
-  name: nodeport-jupyter
+  name: myrelease-dask-jupyter
   namespace: default
-  resourceVersion: "246315"
-  uid: 178c3a81-f8de-4aa4-9088-5206735859f8
+  resourceVersion: "754875"
+  uid: 7a7b14bf-120b-411b-b1ce-ce3f6ce5ee26
 spec:
-  clusterIP: 10.43.85.39
+  clusterIP: 10.43.11.219
   clusterIPs:
-  - 10.43.85.39
-  externalTrafficPolicy: Cluster
-  externalIPs:
-  - 192.168.20.47
+  - 10.43.11.219
   internalTrafficPolicy: Cluster
   ipFamilies:
   - IPv4
   ipFamilyPolicy: SingleStack
   ports:
-  - nodePort: 30080
+  - name: myrelease-dask-jupyter
     port: 80
     protocol: TCP
     targetPort: 8888
@@ -34,6 +34,6 @@ spec:
     component: jupyter
     release: myrelease
   sessionAffinity: None
-  type: NodePort
+  type: ClusterIP
 status:
   loadBalancer: {}

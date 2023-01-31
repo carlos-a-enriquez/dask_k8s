@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    meta.helm.sh/release-name: myrelease
+    meta.helm.sh/release-namespace: default
+  creationTimestamp: "2023-01-29T14:10:28Z"
+  labels:
+    app: dask
+    app.kubernetes.io/managed-by: Helm
+    chart: dask-2023.1.0
+    component: scheduler
+    heritage: Helm
+    release: myrelease
+  name: myrelease-dask-scheduler
+  namespace: default
+  resourceVersion: "754871"
+  uid: 2451aa1c-588c-4439-ab62-7fa167dca512
+spec:
+  clusterIP: 10.43.220.241
+  clusterIPs:
+  - 10.43.220.241
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: myrelease-dask-scheduler
+    port: 8786
+    protocol: TCP
+    targetPort: 8786
+  - name: myrelease-dask-webui
+    port: 80
+    protocol: TCP
+    targetPort: 8787
+  selector:
+    app: dask
+    component: scheduler
+    release: myrelease
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
