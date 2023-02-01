@@ -47,7 +47,7 @@ spec:
         - --no-dashboard
         - --dashboard-address
         - "8790"
-        image: ghcr.io/dask/dask:2023.1.0
+        image: carloskez/dask_pyscenic
         imagePullPolicy: IfNotPresent
         name: myrelease-dask-worker
         ports:
