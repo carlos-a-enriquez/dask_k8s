@@ -44,6 +44,8 @@ spec:
       - env:
         - name: DASK_SCHEDULER_ADDRESS
           value: myrelease-dask-scheduler:8786
+        - name: EXTRA_PIP_PACKAGES
+          value: pyscenic
         image: ghcr.io/dask/dask-notebook:2023.1.0
         imagePullPolicy: IfNotPresent
         name: myrelease-dask-jupyter
