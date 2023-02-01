@@ -15,6 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build ./dask_base_pyscenic --file Dockerfile --tag carloskez/dask_pyscenic
+      run: docker build . --file ./dask_base_pyscenic/Dockerfile --tag carloskez/dask_pyscenic
     - name: Push the image to Dockerhub
       run: docker login -u carloskez -p ${{secrets.DOCKER_TOKEN}} && docker push carloskez/dask_pyscenic
