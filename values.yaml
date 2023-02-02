@@ -90,7 +90,7 @@ worker:
     pullPolicy: IfNotPresent
     pullSecrets: null
     repository: carloskez/dask_pyscenic
-    tag: 2023.1.0
+    tag: latest
   livenessProbe: {}
   metrics:
     enabled: false
