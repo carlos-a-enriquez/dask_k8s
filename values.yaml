@@ -4,7 +4,9 @@ jupyter:
   args: null
   command: null
   enabled: true
-  env: null
+  env:
+    - name: EXTRA_PIP_PACKAGES
+      value: pyscenic
   extraConfig: |-
     # Extra Jupyter config goes here
     # E.g
@@ -87,7 +89,7 @@ worker:
     dask_worker: dask-worker
     pullPolicy: IfNotPresent
     pullSecrets: null
-    repository: ghcr.io/dask/dask
+    repository: carloskez/dask_pyscenic
     tag: 2023.1.0
   livenessProbe: {}
   metrics:
