@@ -1,0 +1,114 @@
+additional_worker_groups: []
+jupyter:
+  affinity: {}
+  args: null
+  command: null
+  enabled: true
+  env: null
+  extraConfig: |-
+    # Extra Jupyter config goes here
+    # E.g
+    # c.NotebookApp.port = 8888
+  image:
+    pullPolicy: IfNotPresent
+    pullSecrets: null
+    repository: ghcr.io/dask/dask-notebook
+    tag: 2023.1.0
+  ingress:
+    annotations: {}
+    enabled: false
+    hostname: dask-jupyter.example.com
+    pathType: Prefix
+    tls: false
+  livenessProbe: {}
+  mounts: {}
+  name: jupyter
+  nodeSelector: {}
+  password: sha1:aae8550c0a44:9507d45e087d5ee481a5ce9f4f16f37a0867318c
+  rbac: true
+  readinessProbe: {}
+  resources: {}
+  securityContext: {}
+  serviceAccountName: dask-jupyter
+  servicePort: 80
+  serviceType: ClusterIP
+  tolerations: []
+scheduler:
+  affinity: {}
+  enabled: true
+  extraArgs: []
+  image:
+    pullPolicy: IfNotPresent
+    pullSecrets: null
+    repository: ghcr.io/dask/dask
+    tag: 2023.1.0
+  livenessProbe: {}
+  loadBalancerIP: null
+  metrics:
+    enabled: false
+    serviceMonitor:
+      additionalLabels: {}
+      enabled: false
+      interval: 30s
+      jobLabel: ""
+      metricRelabelings: []
+      namespace: ""
+      namespaceSelector: {}
+      targetLabels: []
+  name: scheduler
+  nodeSelector: {}
+  readinessProbe: {}
+  replicas: 1
+  resources: {}
+  securityContext: {}
+  serviceAnnotations: {}
+  servicePort: 8786
+  serviceType: ClusterIP
+  tolerations: []
+webUI:
+  ingress:
+    annotations: {}
+    enabled: false
+    hostname: dask-ui.example.com
+    pathType: Prefix
+    tls: false
+  name: webui
+  servicePort: 80
+worker:
+  affinity: {}
+  annotations: {}
+  custom_scheduler_url: null
+  default_resources:
+    cpu: 1
+    memory: 4GiB
+  env: null
+  extraArgs: []
+  image:
+    dask_worker: dask-worker
+    pullPolicy: IfNotPresent
+    pullSecrets: null
+    repository: ghcr.io/dask/dask
+    tag: 2023.1.0
+  livenessProbe: {}
+  metrics:
+    enabled: false
+    podMonitor:
+      additionalLabels: {}
+      enabled: false
+      interval: 30s
+      jobLabel: ""
+      metricRelabelings: []
+      namespace: ""
+      namespaceSelector: {}
+      podTargetLabels: []
+  mounts: {}
+  name: worker
+  nodeSelector: {}
+  portDashboard: 8790
+  readinessProbe: {}
+  replicas: 3
+  resources: {}
+  securityContext: {}
+  strategy:
+    type: RollingUpdate
+  tolerations: []
