@@ -23,7 +23,14 @@ jupyter:
     pathType: Prefix
     tls: false
   livenessProbe: {}
-  mounts: {}
+  mounts: # Worker Pod volumes and volume mounts, mounts.volumes follows kuberentes api v1 Volumes spec. mounts.volumeMounts follows kubernetesapi v1 VolumeMount spec
+    volumes:
+      - name: dask-storage
+        persistentVolumeClaim:
+          claimName: pvc-dask-data
+    volumeMounts:
+      - name: dask-storage
+        mountPath: /save_data # folder for storage
   name: jupyter
   nodeSelector: {}
   password: sha1:aae8550c0a44:9507d45e087d5ee481a5ce9f4f16f37a0867318c
@@ -103,7 +110,14 @@ worker:
       namespace: ""
       namespaceSelector: {}
       podTargetLabels: []
-  mounts: {}
+  mounts: 
+    volumes:
+      - name: dask-storage
+        persistentVolumeClaim:
+         claimName: pvc-dask-data
+    volumeMounts:
+      - name: dask-storage
+        mountPath: /save_data # folder for storage
   name: worker
   nodeSelector: {}
   portDashboard: 8790
