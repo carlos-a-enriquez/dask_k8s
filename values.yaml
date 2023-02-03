@@ -27,7 +27,7 @@ jupyter:
     volumes:
       - name: dask-storage
         persistentVolumeClaim:
-          claimName: pvc-dask-data
+          claimName: dask-pv-claim
     volumeMounts:
       - name: dask-storage
         mountPath: /save_data # folder for storage
@@ -114,7 +114,7 @@ worker:
     volumes:
       - name: dask-storage
         persistentVolumeClaim:
-         claimName: pvc-dask-data
+         claimName: dask-pv-claim
     volumeMounts:
       - name: dask-storage
         mountPath: /save_data # folder for storage
