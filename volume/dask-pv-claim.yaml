@@ -5,7 +5,8 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce #can be used by a single node -ReadOnlyMany : for multiple nodes -ReadWriteMany: read/written to/by many nodes
+  storageClassName: local-storage
   volumeMode: Filesystem
   resources: # https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes
     requests:
-      storage: 1Gi
+      storage: 2Gi
