@@ -119,10 +119,10 @@ worker:
   resources: 
     limits:
       cpu: 1
-      memory: 8GiB
+      memory: 8G
     requests:
       cpu: 1
-      memory: 4GiB
+      memory: 4G
   securityContext: {}
   strategy:
     type: RollingUpdate
