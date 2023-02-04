@@ -1,0 +1,141 @@
++ '[' '' ']'
++ '[' '' == true ']'
++ CONDA_BIN=/opt/conda/bin/conda
+no environment.yml
++ '[' -e /opt/app/environment.yml ']'
++ echo 'no environment.yml'
++ '[' '' ']'
++ '[' '' ']'
++ exec dask-scheduler --port=8786 --dashboard-address=:8787
+/opt/conda/lib/python3.8/site-packages/distributed/cli/dask_scheduler.py:140: FutureWarning: dask-scheduler is deprecated and will be removed in a future release; use `dask scheduler` instead
+  warnings.warn(
+2023-02-04 17:55:09,660 - distributed.scheduler - INFO - -----------------------------------------------
+2023-02-04 17:55:12,413 - distributed.http.proxy - INFO - To route to workers diagnostics web server please install jupyter-server-proxy: python -m pip install jupyter-server-proxy
+2023-02-04 17:55:12,482 - distributed.scheduler - INFO - State start
+2023-02-04 17:55:12,501 - distributed.scheduler - INFO - -----------------------------------------------
+2023-02-04 17:55:12,503 - distributed.scheduler - INFO -   Scheduler at:     tcp://10.42.2.53:8786
+2023-02-04 17:55:12,503 - distributed.scheduler - INFO -   dashboard at:                     :8787
+2023-02-04 17:55:41,949 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.1.48:38513', status: init, memory: 0, processing: 0>
+2023-02-04 17:55:41,952 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.1.48:38513
+2023-02-04 17:55:41,952 - distributed.core - INFO - Starting established connection to tcp://10.42.1.48:37006
+2023-02-04 17:55:42,080 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.1.45:44101', status: init, memory: 0, processing: 0>
+2023-02-04 17:55:42,081 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.1.45:44101
+2023-02-04 17:55:42,081 - distributed.core - INFO - Starting established connection to tcp://10.42.1.45:34844
+2023-02-04 17:55:42,082 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.1.47:46597', status: init, memory: 0, processing: 0>
+2023-02-04 17:55:42,082 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.1.47:46597
+2023-02-04 17:55:42,082 - distributed.core - INFO - Starting established connection to tcp://10.42.1.47:40580
+2023-02-04 17:55:42,206 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.1.46:46581', status: init, memory: 0, processing: 0>
+2023-02-04 17:55:42,207 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.1.46:46581
+2023-02-04 17:55:42,207 - distributed.core - INFO - Starting established connection to tcp://10.42.1.46:52662
+2023-02-04 17:55:42,251 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.1.44:43591', status: init, memory: 0, processing: 0>
+2023-02-04 17:55:42,252 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.1.44:43591
+2023-02-04 17:55:42,252 - distributed.core - INFO - Starting established connection to tcp://10.42.1.44:44546
+2023-02-04 17:55:46,685 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.50:38731', status: init, memory: 0, processing: 0>
+2023-02-04 17:55:46,686 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.50:38731
+2023-02-04 17:55:46,686 - distributed.core - INFO - Starting established connection to tcp://10.42.2.50:41420
+2023-02-04 17:55:46,844 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.52:34691', status: init, memory: 0, processing: 0>
+2023-02-04 17:55:46,846 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.52:34691
+2023-02-04 17:55:46,846 - distributed.core - INFO - Starting established connection to tcp://10.42.2.52:53806
+2023-02-04 17:55:47,055 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.49:39231', status: init, memory: 0, processing: 0>
+2023-02-04 17:55:47,056 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.49:39231
+2023-02-04 17:55:47,056 - distributed.core - INFO - Starting established connection to tcp://10.42.2.49:34830
+2023-02-04 17:55:47,142 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.48:37711', status: init, memory: 0, processing: 0>
+2023-02-04 17:55:47,144 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.48:37711
+2023-02-04 17:55:47,144 - distributed.core - INFO - Starting established connection to tcp://10.42.2.48:42970
+2023-02-04 17:55:47,196 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.51:39805', status: init, memory: 0, processing: 0>
+2023-02-04 17:55:47,196 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.51:39805
+2023-02-04 17:55:47,197 - distributed.core - INFO - Starting established connection to tcp://10.42.2.51:45828
+2023-02-04 17:56:03,359 - distributed.scheduler - INFO - Receive client connection: Client-306e1308-a4b5-11ed-86d1-c60e4edded2c
+2023-02-04 17:56:03,359 - distributed.core - INFO - Starting established connection to tcp://10.42.1.39:39218
+2023-02-04 17:57:14,000 - bokeh.application.handlers.function - ERROR - '<' not supported between instances of 'NoneType' and 'NoneType'
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/distributed/utils.py", line 747, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 4188, in graph_doc
+    graph = TaskGraph(scheduler, sizing_mode="stretch_both")
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 2243, in __init__
+    self.layout = GraphLayout(scheduler)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/diagnostics/graph_layout.py", line 41, in __init__
+    self.update_graph(
+  File "/opt/conda/lib/python3.8/site-packages/distributed/diagnostics/graph_layout.py", line 51, in update_graph
+    stack = sorted(tasks, key=lambda k: priority.get(k, 0), reverse=True)
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+2023-02-04 17:57:14,001 - tornado.application - ERROR - Uncaught exception GET /graph (127.0.0.1)
+HTTPServerRequest(protocol='http', host='131.154.96.42:8081', method='GET', uri='/graph', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/tornado/web.py", line 1713, in _execute
+    result = await result
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/server/views/doc_handler.py", line 54, in get
+    session = await self.get_session()
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/server/views/session_handler.py", line 144, in get_session
+    session = await self.application_context.create_session_if_needed(session_id, self.request, token)
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/server/contexts.py", line 243, in create_session_if_needed
+    self._application.initialize_document(doc)
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/application/application.py", line 194, in initialize_document
+    h.modify_document(doc)
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/application/handlers/function.py", line 143, in modify_document
+    self._func(doc)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/utils.py", line 747, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 4188, in graph_doc
+    graph = TaskGraph(scheduler, sizing_mode="stretch_both")
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 2243, in __init__
+    self.layout = GraphLayout(scheduler)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/diagnostics/graph_layout.py", line 41, in __init__
+    self.update_graph(
+  File "/opt/conda/lib/python3.8/site-packages/distributed/diagnostics/graph_layout.py", line 51, in update_graph
+    stack = sorted(tasks, key=lambda k: priority.get(k, 0), reverse=True)
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+Exception ignored in: <function TaskGraph.__del__ at 0x7f629230ae50>
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 2421, in __del__
+    self.scheduler.remove_plugin(name=self.layout.name)
+AttributeError: 'TaskGraph' object has no attribute 'layout'
+2023-02-04 17:57:45,908 - bokeh.application.handlers.function - ERROR - '<' not supported between instances of 'NoneType' and 'NoneType'
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/distributed/utils.py", line 747, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 4188, in graph_doc
+    graph = TaskGraph(scheduler, sizing_mode="stretch_both")
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 2243, in __init__
+    self.layout = GraphLayout(scheduler)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/diagnostics/graph_layout.py", line 41, in __init__
+    self.update_graph(
+  File "/opt/conda/lib/python3.8/site-packages/distributed/diagnostics/graph_layout.py", line 51, in update_graph
+    stack = sorted(tasks, key=lambda k: priority.get(k, 0), reverse=True)
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+2023-02-04 17:57:45,908 - tornado.application - ERROR - Uncaught exception GET /graph (127.0.0.1)
+HTTPServerRequest(protocol='http', host='131.154.96.42:8081', method='GET', uri='/graph', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/tornado/web.py", line 1713, in _execute
+    result = await result
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/server/views/doc_handler.py", line 54, in get
+    session = await self.get_session()
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/server/views/session_handler.py", line 144, in get_session
+    session = await self.application_context.create_session_if_needed(session_id, self.request, token)
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/server/contexts.py", line 243, in create_session_if_needed
+    self._application.initialize_document(doc)
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/application/application.py", line 194, in initialize_document
+    h.modify_document(doc)
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/application/handlers/function.py", line 143, in modify_document
+    self._func(doc)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/utils.py", line 747, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 4188, in graph_doc
+    graph = TaskGraph(scheduler, sizing_mode="stretch_both")
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 2243, in __init__
+    self.layout = GraphLayout(scheduler)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/diagnostics/graph_layout.py", line 41, in __init__
+    self.update_graph(
+  File "/opt/conda/lib/python3.8/site-packages/distributed/diagnostics/graph_layout.py", line 51, in update_graph
+    stack = sorted(tasks, key=lambda k: priority.get(k, 0), reverse=True)
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+2023-02-04 17:57:53,020 - distributed.scheduler - INFO - Remove client Client-306e1308-a4b5-11ed-86d1-c60e4edded2c
+2023-02-04 17:57:53,020 - distributed.core - INFO - Received 'close-stream' from tcp://10.42.1.39:39218; closing.
+2023-02-04 17:57:53,021 - distributed.scheduler - INFO - Remove client Client-306e1308-a4b5-11ed-86d1-c60e4edded2c
+2023-02-04 17:57:53,022 - distributed.scheduler - INFO - Close client connection: Client-306e1308-a4b5-11ed-86d1-c60e4edded2c
+Exception ignored in: <function TaskGraph.__del__ at 0x7f629230ae50>
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 2421, in __del__
+    self.scheduler.remove_plugin(name=self.layout.name)
+AttributeError: 'TaskGraph' object has no attribute 'layout'
