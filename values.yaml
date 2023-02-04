@@ -103,7 +103,7 @@ worker:
     enabled: false
     podMonitor:
       additionalLabels: {}
-      enabled: false
+      enabled: true
       interval: 30s
       jobLabel: ""
       metricRelabelings: []
