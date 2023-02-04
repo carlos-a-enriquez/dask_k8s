@@ -1,0 +1,4 @@
+project/databases/*
+project/resources/*
+project/tmp/*
+project/.ipynb_checkpoints/*
