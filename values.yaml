@@ -94,7 +94,7 @@ worker:
   extraArgs: []
   image:
     dask_worker: dask-worker
-    pullPolicy: IfNotPresent
+    pullPolicy: Always
     pullSecrets: null
     repository: carloskez/dask_pyscenic
     tag: latest
