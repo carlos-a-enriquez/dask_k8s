@@ -1,0 +1,636 @@
++ '[' '' ']'
++ '[' '' == true ']'
++ CONDA_BIN=/opt/conda/bin/conda
++ '[' -e /opt/app/environment.yml ']'
++ echo 'no environment.yml'
++ '[' '' ']'
++ '[' '' ']'
++ exec dask-scheduler --port=8786 --dashboard-address=:8787
+no environment.yml
+/opt/conda/lib/python3.8/site-packages/distributed/cli/dask_scheduler.py:140: FutureWarning: dask-scheduler is deprecated and will be removed in a future release; use `dask scheduler` instead
+  warnings.warn(
+2023-01-29 14:10:45,718 - distributed.scheduler - INFO - -----------------------------------------------
+2023-01-29 14:10:53,382 - distributed.http.proxy - INFO - To route to workers diagnostics web server please install jupyter-server-proxy: python -m pip install jupyter-server-proxy
+2023-01-29 14:10:53,466 - distributed.scheduler - INFO - State start
+2023-01-29 14:10:53,471 - distributed.scheduler - INFO - -----------------------------------------------
+2023-01-29 14:10:53,472 - distributed.scheduler - INFO -   Scheduler at:     tcp://10.42.2.30:8786
+2023-01-29 14:10:53,472 - distributed.scheduler - INFO -   dashboard at:                     :8787
+2023-01-29 14:10:57,549 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.31:46137', status: init, memory: 0, processing: 0>
+2023-01-29 14:10:57,552 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.31:46137
+2023-01-29 14:10:57,552 - distributed.core - INFO - Starting established connection to tcp://10.42.2.31:43808
+2023-01-29 14:11:03,970 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.1.23:45647', status: init, memory: 0, processing: 0>
+2023-01-29 14:11:03,971 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.1.23:45647
+2023-01-29 14:11:03,971 - distributed.core - INFO - Starting established connection to tcp://10.42.1.23:45038
+2023-01-29 14:11:14,244 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.32:37991', status: init, memory: 0, processing: 0>
+2023-01-29 14:11:14,245 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.32:37991
+2023-01-29 14:11:14,245 - distributed.core - INFO - Starting established connection to tcp://10.42.2.32:55724
+2023-01-29 14:13:47,707 - distributed.scheduler - INFO - Receive client connection: Client-24aadbe7-9fdf-11ed-803b-2e9d9663c5d3
+2023-01-29 14:13:47,708 - distributed.core - INFO - Starting established connection to tcp://10.42.1.22:43902
+2023-01-29 14:25:24,893 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.1.24:34129', status: init, memory: 0, processing: 0>
+2023-01-29 14:25:24,894 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.1.24:34129
+2023-01-29 14:25:24,894 - distributed.core - INFO - Starting established connection to tcp://10.42.1.24:47466
+2023-01-29 14:25:25,497 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.33:44767', status: init, memory: 0, processing: 0>
+2023-01-29 14:25:25,498 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.33:44767
+2023-01-29 14:25:25,498 - distributed.core - INFO - Starting established connection to tcp://10.42.2.33:55974
+2023-01-29 14:25:53,432 - distributed.scheduler - INFO - Receive client connection: Client-d63cfb7c-9fe0-11ed-803b-2e9d9663c5d3
+2023-01-29 14:25:53,433 - distributed.core - INFO - Starting established connection to tcp://10.42.1.22:45890
+2023-01-29 14:29:03,960 - distributed.core - INFO - Connection to tcp://10.42.2.32:55724 has been closed.
+2023-01-29 14:29:03,960 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.2.32:37991', status: running, memory: 58, processing: 0>
+2023-01-29 14:29:03,960 - distributed.core - INFO - Removing comms to tcp://10.42.2.32:37991
+2023-01-29 14:29:03,988 - distributed.core - INFO - Connection to tcp://10.42.2.31:43808 has been closed.
+2023-01-29 14:29:03,989 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.2.31:46137', status: running, memory: 30, processing: 9>
+2023-01-29 14:29:03,989 - distributed.core - INFO - Removing comms to tcp://10.42.2.31:46137
+2023-01-29 14:29:03,998 - distributed.core - INFO - Connection to tcp://10.42.2.33:55974 has been closed.
+2023-01-29 14:29:03,998 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.2.33:44767', status: running, memory: 70, processing: 9>
+2023-01-29 14:29:03,999 - distributed.core - INFO - Removing comms to tcp://10.42.2.33:44767
+2023-01-29 14:30:41,900 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.1.25:43745', status: init, memory: 0, processing: 0>
+2023-01-29 14:30:41,901 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.1.25:43745
+2023-01-29 14:30:41,901 - distributed.core - INFO - Starting established connection to tcp://10.42.1.25:56236
+2023-01-29 14:30:43,548 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.34:43005', status: init, memory: 0, processing: 0>
+2023-01-29 14:30:43,549 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.34:43005
+2023-01-29 14:30:43,549 - distributed.core - INFO - Starting established connection to tcp://10.42.2.34:58402
+2023-01-29 14:30:44,018 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.35:40855', status: init, memory: 0, processing: 0>
+2023-01-29 14:30:44,019 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.35:40855
+2023-01-29 14:30:44,019 - distributed.core - INFO - Starting established connection to tcp://10.42.2.35:42360
+2023-01-29 14:30:44,060 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.36:39869', status: init, memory: 0, processing: 0>
+2023-01-29 14:30:44,060 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.36:39869
+2023-01-29 14:30:44,060 - distributed.core - INFO - Starting established connection to tcp://10.42.2.36:33742
+2023-01-29 14:34:26,158 - distributed.core - INFO - Connection to tcp://10.42.1.25:56236 has been closed.
+2023-01-29 14:34:26,158 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.1.25:43745', status: running, memory: 4, processing: 0>
+2023-01-29 14:34:26,158 - distributed.core - INFO - Removing comms to tcp://10.42.1.25:43745
+2023-01-29 14:34:26,169 - distributed.core - INFO - Connection to tcp://10.42.2.34:58402 has been closed.
+2023-01-29 14:34:26,170 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.2.34:43005', status: running, memory: 67, processing: 1>
+2023-01-29 14:34:26,170 - distributed.core - INFO - Removing comms to tcp://10.42.2.34:43005
+2023-01-29 14:34:26,183 - distributed.core - INFO - Connection to tcp://10.42.2.35:42360 has been closed.
+2023-01-29 14:34:26,183 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.2.35:40855', status: running, memory: 71, processing: 9>
+2023-01-29 14:34:26,183 - distributed.core - INFO - Removing comms to tcp://10.42.2.35:40855
+2023-01-29 14:34:26,194 - distributed.core - INFO - Connection to tcp://10.42.2.36:33742 has been closed.
+2023-01-29 14:34:26,194 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.2.36:39869', status: running, memory: 110, processing: 9>
+2023-01-29 14:34:26,194 - distributed.core - INFO - Removing comms to tcp://10.42.2.36:39869
+2023-01-29 14:34:26,209 - distributed.batched - INFO - Batched Comm Closed <TCP (closed) Scheduler connection to worker local=tcp://10.42.2.30:8786 remote=tcp://10.42.2.35:42360>
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/distributed/comm/tcp.py", line 317, in write
+    raise StreamClosedError()
+tornado.iostream.StreamClosedError: Stream is closed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/distributed/batched.py", line 115, in _background_send
+    nbytes = yield coro
+  File "/opt/conda/lib/python3.8/site-packages/tornado/gen.py", line 769, in run
+    value = future.result()
+  File "/opt/conda/lib/python3.8/site-packages/distributed/comm/tcp.py", line 328, in write
+    convert_stream_closed_error(self, e)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/comm/tcp.py", line 144, in convert_stream_closed_error
+    raise CommClosedError(f"in {obj}: {exc}") from exc
+distributed.comm.core.CommClosedError: in <TCP (closed) Scheduler connection to worker local=tcp://10.42.2.30:8786 remote=tcp://10.42.2.35:42360>: Stream is closed
+2023-01-29 14:34:26,210 - distributed.batched - INFO - Batched Comm Closed <TCP (closed) Scheduler connection to worker local=tcp://10.42.2.30:8786 remote=tcp://10.42.2.36:33742>
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/distributed/comm/tcp.py", line 317, in write
+    raise StreamClosedError()
+tornado.iostream.StreamClosedError: Stream is closed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/distributed/batched.py", line 115, in _background_send
+    nbytes = yield coro
+  File "/opt/conda/lib/python3.8/site-packages/tornado/gen.py", line 769, in run
+    value = future.result()
+  File "/opt/conda/lib/python3.8/site-packages/distributed/comm/tcp.py", line 328, in write
+    convert_stream_closed_error(self, e)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/comm/tcp.py", line 144, in convert_stream_closed_error
+    raise CommClosedError(f"in {obj}: {exc}") from exc
+distributed.comm.core.CommClosedError: in <TCP (closed) Scheduler connection to worker local=tcp://10.42.2.30:8786 remote=tcp://10.42.2.36:33742>: Stream is closed
+2023-01-29 14:35:22,980 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.1.26:37183', status: init, memory: 0, processing: 0>
+2023-01-29 14:35:22,981 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.1.26:37183
+2023-01-29 14:35:22,981 - distributed.core - INFO - Starting established connection to tcp://10.42.1.26:57016
+2023-01-29 14:35:23,157 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.1.27:44623', status: init, memory: 0, processing: 0>
+2023-01-29 14:35:23,158 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.1.27:44623
+2023-01-29 14:35:23,158 - distributed.core - INFO - Starting established connection to tcp://10.42.1.27:46008
+2023-01-29 14:35:24,067 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.37:32851', status: init, memory: 0, processing: 0>
+2023-01-29 14:35:24,068 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.37:32851
+2023-01-29 14:35:24,068 - distributed.core - INFO - Starting established connection to tcp://10.42.2.37:57704
+2023-01-29 14:35:24,399 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.39:35395', status: init, memory: 0, processing: 0>
+2023-01-29 14:35:24,400 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.39:35395
+2023-01-29 14:35:24,400 - distributed.core - INFO - Starting established connection to tcp://10.42.2.39:52444
+2023-01-29 14:35:24,478 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.38:34937', status: init, memory: 0, processing: 0>
+2023-01-29 14:35:24,479 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.38:34937
+2023-01-29 14:35:24,479 - distributed.core - INFO - Starting established connection to tcp://10.42.2.38:51256
+2023-01-29 14:35:24,517 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.40:43687', status: init, memory: 0, processing: 0>
+2023-01-29 14:35:24,518 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.40:43687
+2023-01-29 14:35:24,518 - distributed.core - INFO - Starting established connection to tcp://10.42.2.40:48208
+2023-01-29 14:35:47,210 - distributed.core - INFO - Connection to tcp://10.42.2.40:48208 has been closed.
+2023-01-29 14:35:47,210 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.2.40:43687', status: running, memory: 36, processing: 0>
+2023-01-29 14:35:47,210 - distributed.core - INFO - Removing comms to tcp://10.42.2.40:43687
+2023-01-29 14:35:47,219 - distributed.core - INFO - Connection to tcp://10.42.2.39:52444 has been closed.
+2023-01-29 14:35:47,220 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.2.39:35395', status: running, memory: 22, processing: 5>
+2023-01-29 14:35:47,220 - distributed.core - INFO - Removing comms to tcp://10.42.2.39:35395
+2023-01-29 14:35:47,225 - distributed.batched - INFO - Batched Comm Closed <TCP (closed) Scheduler connection to worker local=tcp://10.42.2.30:8786 remote=tcp://10.42.2.39:52444>
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/distributed/comm/tcp.py", line 317, in write
+    raise StreamClosedError()
+tornado.iostream.StreamClosedError: Stream is closed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/distributed/batched.py", line 115, in _background_send
+    nbytes = yield coro
+  File "/opt/conda/lib/python3.8/site-packages/tornado/gen.py", line 769, in run
+    value = future.result()
+  File "/opt/conda/lib/python3.8/site-packages/distributed/comm/tcp.py", line 328, in write
+    convert_stream_closed_error(self, e)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/comm/tcp.py", line 144, in convert_stream_closed_error
+    raise CommClosedError(f"in {obj}: {exc}") from exc
+distributed.comm.core.CommClosedError: in <TCP (closed) Scheduler connection to worker local=tcp://10.42.2.30:8786 remote=tcp://10.42.2.39:52444>: Stream is closed
+2023-01-29 14:36:10,475 - distributed.scheduler - INFO - Receive client connection: Client-45b18250-9fe2-11ed-80e9-2e9d9663c5d3
+2023-01-29 14:36:10,476 - distributed.core - INFO - Starting established connection to tcp://10.42.1.22:51570
+2023-01-29 15:25:51,720 - distributed.scheduler - INFO - Receive client connection: Client-36fb846d-9fe9-11ed-803b-2e9d9663c5d3
+2023-01-29 15:25:51,721 - distributed.core - INFO - Starting established connection to tcp://10.42.1.22:47422
+2023-01-29 20:00:19,272 - distributed.scheduler - INFO - Receive client connection: Client-8e15daf0-a00f-11ed-814c-2e9d9663c5d3
+2023-01-29 20:00:19,273 - distributed.core - INFO - Starting established connection to tcp://10.42.1.22:50590
+2023-01-30 09:57:32,046 - distributed.core - INFO - Connection to tcp://10.42.1.22:47422 has been closed.
+2023-01-30 09:57:32,046 - distributed.scheduler - INFO - Remove client Client-36fb846d-9fe9-11ed-803b-2e9d9663c5d3
+2023-01-30 09:57:32,047 - distributed.scheduler - INFO - Close client connection: Client-36fb846d-9fe9-11ed-803b-2e9d9663c5d3
+2023-01-30 09:57:33,074 - distributed.core - INFO - Connection to tcp://10.42.1.22:43902 has been closed.
+2023-01-30 09:57:33,074 - distributed.scheduler - INFO - Remove client Client-24aadbe7-9fdf-11ed-803b-2e9d9663c5d3
+2023-01-30 09:57:33,074 - distributed.scheduler - INFO - Close client connection: Client-24aadbe7-9fdf-11ed-803b-2e9d9663c5d3
+2023-01-30 09:57:33,842 - distributed.core - INFO - Connection to tcp://10.42.1.22:45890 has been closed.
+2023-01-30 09:57:33,842 - distributed.scheduler - INFO - Remove client Client-d63cfb7c-9fe0-11ed-803b-2e9d9663c5d3
+2023-01-30 09:57:33,871 - distributed.scheduler - INFO - Close client connection: Client-d63cfb7c-9fe0-11ed-803b-2e9d9663c5d3
+2023-01-30 09:57:34,606 - distributed.core - INFO - Connection to tcp://10.42.1.22:50590 has been closed.
+2023-01-30 09:57:34,606 - distributed.scheduler - INFO - Remove client Client-8e15daf0-a00f-11ed-814c-2e9d9663c5d3
+2023-01-30 09:57:34,606 - distributed.scheduler - INFO - Close client connection: Client-8e15daf0-a00f-11ed-814c-2e9d9663c5d3
+2023-01-30 09:57:35,886 - distributed.core - INFO - Connection to tcp://10.42.1.22:51570 has been closed.
+2023-01-30 09:57:35,886 - distributed.scheduler - INFO - Remove client Client-45b18250-9fe2-11ed-80e9-2e9d9663c5d3
+2023-01-30 09:57:35,936 - distributed.scheduler - INFO - Close client connection: Client-45b18250-9fe2-11ed-80e9-2e9d9663c5d3
+2023-01-30 09:58:04,110 - distributed.core - INFO - Connection to tcp://10.42.1.24:47466 has been closed.
+2023-01-30 09:58:04,110 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.1.24:34129', status: running, memory: 0, processing: 0>
+2023-01-30 09:58:04,110 - distributed.core - INFO - Removing comms to tcp://10.42.1.24:34129
+2023-01-30 09:58:04,111 - distributed.core - INFO - Connection to tcp://10.42.1.23:45038 has been closed.
+2023-01-30 09:58:04,111 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.1.23:45647', status: running, memory: 0, processing: 0>
+2023-01-30 09:58:04,111 - distributed.core - INFO - Removing comms to tcp://10.42.1.23:45647
+2023-01-30 09:58:04,112 - distributed.core - INFO - Connection to tcp://10.42.1.26:57016 has been closed.
+2023-01-30 09:58:04,112 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.1.26:37183', status: running, memory: 0, processing: 0>
+2023-01-30 09:58:04,112 - distributed.core - INFO - Removing comms to tcp://10.42.1.26:37183
+2023-01-30 09:58:04,112 - distributed.core - INFO - Connection to tcp://10.42.1.27:46008 has been closed.
+2023-01-30 09:58:04,112 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.1.27:44623', status: running, memory: 0, processing: 0>
+2023-01-30 09:58:04,113 - distributed.core - INFO - Removing comms to tcp://10.42.1.27:44623
+2023-01-30 10:03:34,490 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.1.23:35389', status: init, memory: 0, processing: 0>
+2023-01-30 10:03:34,491 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.1.23:35389
+2023-01-30 10:03:34,491 - distributed.core - INFO - Starting established connection to tcp://10.42.1.23:35078
+2023-01-30 10:03:56,597 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.1.27:39955', status: init, memory: 0, processing: 0>
+2023-01-30 10:03:56,598 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.1.27:39955
+2023-01-30 10:03:56,598 - distributed.core - INFO - Starting established connection to tcp://10.42.1.27:37980
+2023-01-30 10:04:05,376 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.1.24:43553', status: init, memory: 0, processing: 0>
+2023-01-30 10:04:05,376 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.1.24:43553
+2023-01-30 10:04:05,377 - distributed.core - INFO - Starting established connection to tcp://10.42.1.24:37306
+2023-01-30 10:04:32,457 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.1.26:35409', status: init, memory: 0, processing: 0>
+2023-01-30 10:04:32,458 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.1.26:35409
+2023-01-30 10:04:32,458 - distributed.core - INFO - Starting established connection to tcp://10.42.1.26:37412
+2023-01-30 10:16:53,181 - distributed.scheduler - INFO - Receive client connection: Client-37918e60-a087-11ed-814c-2e9d9663c5d3
+2023-01-30 10:16:53,181 - distributed.core - INFO - Starting established connection to tcp://10.42.1.22:40050
+2023-02-01 10:39:43,275 - distributed.scheduler - INFO - Receive client connection: Client-bcb583b2-a21c-11ed-8122-2e9d9663c5d3
+2023-02-01 10:39:43,276 - distributed.core - INFO - Starting established connection to tcp://10.42.1.22:53994
+2023-02-01 10:41:17,423 - distributed.scheduler - INFO - Remove client Client-bcb583b2-a21c-11ed-8122-2e9d9663c5d3
+2023-02-01 10:41:17,423 - distributed.core - INFO - Received 'close-stream' from tcp://10.42.1.22:53994; closing.
+2023-02-01 10:41:17,423 - distributed.scheduler - INFO - Remove client Client-bcb583b2-a21c-11ed-8122-2e9d9663c5d3
+2023-02-01 10:41:17,424 - distributed.scheduler - INFO - Close client connection: Client-bcb583b2-a21c-11ed-8122-2e9d9663c5d3
+2023-02-01 10:41:35,740 - distributed.scheduler - INFO - Receive client connection: Client-ffbe5559-a21c-11ed-8327-2e9d9663c5d3
+2023-02-01 10:41:35,740 - distributed.core - INFO - Starting established connection to tcp://10.42.1.22:43600
+2023-02-01 10:43:54,326 - distributed.scheduler - INFO - Remove client Client-ffbe5559-a21c-11ed-8327-2e9d9663c5d3
+2023-02-01 10:43:54,326 - distributed.core - INFO - Received 'close-stream' from tcp://10.42.1.22:43600; closing.
+2023-02-01 10:43:54,327 - distributed.scheduler - INFO - Remove client Client-ffbe5559-a21c-11ed-8327-2e9d9663c5d3
+2023-02-01 10:43:54,327 - distributed.scheduler - INFO - Close client connection: Client-ffbe5559-a21c-11ed-8327-2e9d9663c5d3
+2023-02-01 10:44:07,050 - distributed.scheduler - INFO - Receive client connection: Client-59dd8e4a-a21d-11ed-835c-2e9d9663c5d3
+2023-02-01 10:44:07,051 - distributed.core - INFO - Starting established connection to tcp://10.42.1.22:52998
+2023-02-01 11:22:18,542 - distributed.scheduler - INFO - Remove client Client-59dd8e4a-a21d-11ed-835c-2e9d9663c5d3
+2023-02-01 11:22:18,542 - distributed.core - INFO - Received 'close-stream' from tcp://10.42.1.22:52998; closing.
+2023-02-01 11:22:18,543 - distributed.scheduler - INFO - Remove client Client-59dd8e4a-a21d-11ed-835c-2e9d9663c5d3
+2023-02-01 11:22:18,543 - distributed.scheduler - INFO - Close client connection: Client-59dd8e4a-a21d-11ed-835c-2e9d9663c5d3
+2023-02-01 11:22:18,543 - distributed.scheduler - INFO - Remove client Client-37918e60-a087-11ed-814c-2e9d9663c5d3
+2023-02-01 11:22:18,543 - distributed.core - INFO - Received 'close-stream' from tcp://10.42.1.22:40050; closing.
+2023-02-01 11:22:18,544 - distributed.scheduler - INFO - Remove client Client-37918e60-a087-11ed-814c-2e9d9663c5d3
+2023-02-01 11:22:18,544 - distributed.scheduler - INFO - Close client connection: Client-37918e60-a087-11ed-814c-2e9d9663c5d3
+2023-02-01 11:41:25,883 - distributed.scheduler - INFO - Receive client connection: Client-5bf59383-a225-11ed-804f-9640d5a531a4
+2023-02-01 11:41:25,883 - distributed.core - INFO - Starting established connection to tcp://10.42.1.29:51340
+2023-02-02 10:19:36,445 - distributed.core - INFO - Connection to tcp://10.42.1.27:37980 has been closed.
+2023-02-02 10:19:36,446 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.1.27:39955', status: running, memory: 0, processing: 0>
+2023-02-02 10:19:36,446 - distributed.core - INFO - Removing comms to tcp://10.42.1.27:39955
+2023-02-02 10:19:36,446 - distributed.core - INFO - Connection to tcp://10.42.1.24:37306 has been closed.
+2023-02-02 10:19:36,447 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.1.24:43553', status: running, memory: 0, processing: 0>
+2023-02-02 10:19:36,447 - distributed.core - INFO - Removing comms to tcp://10.42.1.24:43553
+2023-02-02 10:19:36,451 - distributed.core - INFO - Connection to tcp://10.42.1.26:37412 has been closed.
+2023-02-02 10:19:36,452 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.1.26:35409', status: running, memory: 0, processing: 0>
+2023-02-02 10:19:36,452 - distributed.core - INFO - Removing comms to tcp://10.42.1.26:35409
+2023-02-02 10:19:41,876 - distributed.scheduler - INFO - Receive client connection: Client-1b5ac908-a2e3-11ed-804f-9640d5a531a4
+2023-02-02 10:19:41,877 - distributed.core - INFO - Starting established connection to tcp://10.42.1.29:39646
+2023-02-02 10:27:21,390 - distributed.core - INFO - Connection to tcp://10.42.2.37:57704 has been closed.
+2023-02-02 10:27:21,390 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.2.37:32851', status: running, memory: 0, processing: 0>
+2023-02-02 10:27:21,390 - distributed.core - INFO - Removing comms to tcp://10.42.2.37:32851
+2023-02-02 10:27:25,903 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.42:39483', status: init, memory: 0, processing: 0>
+2023-02-02 10:27:25,904 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.42:39483
+2023-02-02 10:27:25,904 - distributed.core - INFO - Starting established connection to tcp://10.42.2.42:50482
+2023-02-02 10:27:51,286 - distributed.core - INFO - Connection to tcp://10.42.1.23:35078 has been closed.
+2023-02-02 10:27:51,287 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.1.23:35389', status: running, memory: 0, processing: 0>
+2023-02-02 10:27:51,287 - distributed.core - INFO - Removing comms to tcp://10.42.1.23:35389
+2023-02-02 10:27:54,506 - distributed.core - INFO - Connection to tcp://10.42.2.38:51256 has been closed.
+2023-02-02 10:27:54,506 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.2.38:34937', status: running, memory: 0, processing: 0>
+2023-02-02 10:27:54,506 - distributed.core - INFO - Removing comms to tcp://10.42.2.38:34937
+2023-02-02 10:27:55,368 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.1.31:40619', status: init, memory: 0, processing: 0>
+2023-02-02 10:27:55,370 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.1.31:40619
+2023-02-02 10:27:55,370 - distributed.core - INFO - Starting established connection to tcp://10.42.1.31:41648
+2023-02-02 10:27:58,662 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.43:39697', status: init, memory: 0, processing: 0>
+2023-02-02 10:27:58,663 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.43:39697
+2023-02-02 10:27:58,663 - distributed.core - INFO - Starting established connection to tcp://10.42.2.43:34976
+2023-02-02 10:31:22,250 - distributed.scheduler - INFO - Receive client connection: Client-bccfa4fd-a2e4-11ed-804f-9640d5a531a4
+2023-02-02 10:31:22,251 - distributed.core - INFO - Starting established connection to tcp://10.42.1.29:38664
+2023-02-03 14:06:15,888 - distributed.scheduler - INFO - Receive client connection: Client-ec6eead5-a3cb-11ed-804f-9640d5a531a4
+2023-02-03 14:06:15,889 - distributed.core - INFO - Starting established connection to tcp://10.42.1.29:43804
+2023-02-03 14:25:25,458 - distributed.scheduler - INFO - Remove client Client-ec6eead5-a3cb-11ed-804f-9640d5a531a4
+2023-02-03 14:25:25,458 - distributed.core - INFO - Received 'close-stream' from tcp://10.42.1.29:43804; closing.
+2023-02-03 14:25:25,459 - distributed.scheduler - INFO - Remove client Client-ec6eead5-a3cb-11ed-804f-9640d5a531a4
+2023-02-03 14:25:25,459 - distributed.scheduler - INFO - Close client connection: Client-ec6eead5-a3cb-11ed-804f-9640d5a531a4
+2023-02-03 14:25:26,903 - distributed.core - INFO - Connection to tcp://10.42.1.29:38664 has been closed.
+2023-02-03 14:25:26,903 - distributed.scheduler - INFO - Remove client Client-bccfa4fd-a2e4-11ed-804f-9640d5a531a4
+2023-02-03 14:25:26,904 - distributed.core - INFO - Connection to tcp://10.42.1.29:39646 has been closed.
+2023-02-03 14:25:26,904 - distributed.scheduler - INFO - Remove client Client-1b5ac908-a2e3-11ed-804f-9640d5a531a4
+2023-02-03 14:25:26,904 - distributed.core - INFO - Connection to tcp://10.42.1.29:51340 has been closed.
+2023-02-03 14:25:26,904 - distributed.scheduler - INFO - Remove client Client-5bf59383-a225-11ed-804f-9640d5a531a4
+2023-02-03 14:25:26,904 - distributed.scheduler - INFO - Close client connection: Client-bccfa4fd-a2e4-11ed-804f-9640d5a531a4
+2023-02-03 14:25:26,905 - distributed.scheduler - INFO - Close client connection: Client-1b5ac908-a2e3-11ed-804f-9640d5a531a4
+2023-02-03 14:25:26,905 - distributed.scheduler - INFO - Close client connection: Client-5bf59383-a225-11ed-804f-9640d5a531a4
+2023-02-03 14:26:17,182 - distributed.scheduler - INFO - Receive client connection: Client-b77a8a1a-a3ce-11ed-8026-4e90dcdf4697
+2023-02-03 14:26:17,183 - distributed.core - INFO - Starting established connection to tcp://10.42.1.32:33924
+2023-02-03 14:58:22,001 - distributed.scheduler - INFO - Remove client Client-b77a8a1a-a3ce-11ed-8026-4e90dcdf4697
+2023-02-03 14:58:22,001 - distributed.core - INFO - Received 'close-stream' from tcp://10.42.1.32:33924; closing.
+2023-02-03 14:58:22,001 - distributed.scheduler - INFO - Remove client Client-b77a8a1a-a3ce-11ed-8026-4e90dcdf4697
+2023-02-03 14:58:22,002 - distributed.scheduler - INFO - Close client connection: Client-b77a8a1a-a3ce-11ed-8026-4e90dcdf4697
+2023-02-03 15:00:28,986 - distributed.scheduler - INFO - Receive client connection: Client-7e6405a8-a3d3-11ed-8053-5a21fb2d0f54
+2023-02-03 15:00:28,986 - distributed.core - INFO - Starting established connection to tcp://10.42.1.33:41758
+2023-02-03 20:02:56,401 - distributed.scheduler - INFO - Remove client Client-7e6405a8-a3d3-11ed-8053-5a21fb2d0f54
+2023-02-03 20:02:56,401 - distributed.core - INFO - Received 'close-stream' from tcp://10.42.1.33:41758; closing.
+2023-02-03 20:02:56,402 - distributed.scheduler - INFO - Remove client Client-7e6405a8-a3d3-11ed-8053-5a21fb2d0f54
+2023-02-03 20:02:56,402 - distributed.scheduler - INFO - Close client connection: Client-7e6405a8-a3d3-11ed-8053-5a21fb2d0f54
+2023-02-04 12:02:15,942 - distributed.scheduler - INFO - Receive client connection: Client-c3ecc2e6-a483-11ed-82eb-c60e4edded2c
+2023-02-04 12:02:15,943 - distributed.core - INFO - Starting established connection to tcp://10.42.1.39:41338
+2023-02-04 12:03:40,080 - distributed.scheduler - INFO - Remove client Client-c3ecc2e6-a483-11ed-82eb-c60e4edded2c
+2023-02-04 12:03:40,080 - distributed.core - INFO - Received 'close-stream' from tcp://10.42.1.39:41338; closing.
+2023-02-04 12:03:40,080 - distributed.scheduler - INFO - Remove client Client-c3ecc2e6-a483-11ed-82eb-c60e4edded2c
+2023-02-04 12:03:40,081 - distributed.scheduler - INFO - Close client connection: Client-c3ecc2e6-a483-11ed-82eb-c60e4edded2c
+2023-02-04 12:04:45,056 - distributed.scheduler - INFO - Receive client connection: Client-1ccb114e-a484-11ed-8369-c60e4edded2c
+2023-02-04 12:04:45,057 - distributed.core - INFO - Starting established connection to tcp://10.42.1.39:47682
+2023-02-04 12:05:46,519 - distributed.scheduler - INFO - Remove client Client-1ccb114e-a484-11ed-8369-c60e4edded2c
+2023-02-04 12:05:46,519 - distributed.core - INFO - Received 'close-stream' from tcp://10.42.1.39:47682; closing.
+2023-02-04 12:05:46,520 - distributed.scheduler - INFO - Remove client Client-1ccb114e-a484-11ed-8369-c60e4edded2c
+2023-02-04 12:05:46,520 - distributed.scheduler - INFO - Close client connection: Client-1ccb114e-a484-11ed-8369-c60e4edded2c
+2023-02-04 14:22:56,706 - distributed.scheduler - INFO - Receive client connection: Client-6b01442a-a497-11ed-83d5-c60e4edded2c
+2023-02-04 14:22:56,707 - distributed.core - INFO - Starting established connection to tcp://10.42.1.39:54624
+2023-02-04 14:30:06,224 - distributed.core - INFO - Connection to tcp://10.42.1.39:54624 has been closed.
+2023-02-04 14:30:06,225 - distributed.scheduler - INFO - Remove client Client-6b01442a-a497-11ed-83d5-c60e4edded2c
+2023-02-04 14:30:06,225 - distributed.scheduler - INFO - Close client connection: Client-6b01442a-a497-11ed-83d5-c60e4edded2c
+2023-02-04 14:32:34,720 - distributed.scheduler - INFO - Receive client connection: Client-c3843a0a-a498-11ed-8301-c60e4edded2c
+2023-02-04 14:32:34,721 - distributed.core - INFO - Starting established connection to tcp://10.42.1.39:44122
+2023-02-04 14:38:13,626 - distributed.utils_perf - WARNING - full garbage collections took 10% CPU time recently (threshold: 10%)
+2023-02-04 14:42:07,639 - distributed.utils_perf - WARNING - full garbage collections took 15% CPU time recently (threshold: 10%)
+2023-02-04 14:58:26,655 - distributed.core - INFO - Connection to tcp://10.42.1.31:41648 has been closed.
+2023-02-04 14:58:26,655 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.1.31:40619', status: running, memory: 173, processing: 0>
+2023-02-04 14:58:26,655 - distributed.core - INFO - Removing comms to tcp://10.42.1.31:40619
+2023-02-04 14:58:34,091 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.1.40:43259', status: init, memory: 0, processing: 0>
+2023-02-04 14:58:34,092 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.1.40:43259
+2023-02-04 14:58:34,092 - distributed.core - INFO - Starting established connection to tcp://10.42.1.40:60774
+2023-02-04 14:59:11,232 - distributed.scheduler - INFO - Receive client connection: Client-7b7f3efb-a49c-11ed-8301-c60e4edded2c
+2023-02-04 14:59:11,233 - distributed.core - INFO - Starting established connection to tcp://10.42.1.39:41718
+2023-02-04 15:21:09,125 - distributed.worker - INFO - Run out-of-band function 'lambda'
+2023-02-04 15:24:03,503 - distributed.worker - INFO - Run out-of-band function 'lambda'
+2023-02-04 15:24:41,227 - distributed.worker - INFO - Run out-of-band function 'lambda'
+2023-02-04 15:25:44,130 - distributed.worker - INFO - Run out-of-band function 'lambda'
+2023-02-04 15:26:00,892 - distributed.worker - INFO - Run out-of-band function 'lambda'
+2023-02-04 15:30:34,237 - distributed.worker - INFO - Run out-of-band function 'lambda'
+2023-02-04 16:42:17,534 - distributed.core - INFO - Connection to tcp://10.42.1.40:60774 has been closed.
+2023-02-04 16:42:17,535 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.1.40:43259', status: running, memory: 88, processing: 0>
+2023-02-04 16:42:17,535 - distributed.core - INFO - Removing comms to tcp://10.42.1.40:43259
+2023-02-04 16:42:21,449 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.1.41:42735', status: init, memory: 0, processing: 0>
+2023-02-04 16:42:21,450 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.1.41:42735
+2023-02-04 16:42:21,450 - distributed.core - INFO - Starting established connection to tcp://10.42.1.41:39822
+2023-02-04 16:42:45,515 - distributed.core - INFO - Connection to tcp://10.42.2.43:34976 has been closed.
+2023-02-04 16:42:45,515 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.2.43:39697', status: running, memory: 125, processing: 0>
+2023-02-04 16:42:45,516 - distributed.core - INFO - Removing comms to tcp://10.42.2.43:39697
+2023-02-04 16:42:48,771 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.44:41709', status: init, memory: 0, processing: 0>
+2023-02-04 16:42:48,772 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.44:41709
+2023-02-04 16:42:48,772 - distributed.core - INFO - Starting established connection to tcp://10.42.2.44:48994
+2023-02-04 16:42:49,597 - distributed.core - INFO - Connection to tcp://10.42.2.42:50482 has been closed.
+2023-02-04 16:42:49,597 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.2.42:39483', status: running, memory: 144, processing: 9>
+2023-02-04 16:42:49,597 - distributed.core - INFO - Removing comms to tcp://10.42.2.42:39483
+2023-02-04 16:42:53,390 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.1.42:33393', status: init, memory: 0, processing: 0>
+2023-02-04 16:42:53,391 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.1.42:33393
+2023-02-04 16:42:53,391 - distributed.core - INFO - Starting established connection to tcp://10.42.1.42:46152
+2023-02-04 16:43:33,954 - distributed.scheduler - INFO - Receive client connection: Client-105f80ec-a4ab-11ed-8301-c60e4edded2c
+2023-02-04 16:43:33,955 - distributed.core - INFO - Starting established connection to tcp://10.42.1.39:50322
+2023-02-04 16:55:00,904 - distributed.core - INFO - Connection to tcp://10.42.2.44:48994 has been closed.
+2023-02-04 16:55:00,905 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.2.44:41709', status: running, memory: 86, processing: 0>
+2023-02-04 16:55:00,905 - distributed.core - INFO - Removing comms to tcp://10.42.2.44:41709
+2023-02-04 16:55:34,933 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.45:36787', status: init, memory: 0, processing: 0>
+2023-02-04 16:55:34,934 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.45:36787
+2023-02-04 16:55:34,934 - distributed.core - INFO - Starting established connection to tcp://10.42.2.45:59376
+2023-02-04 16:56:48,517 - distributed.core - INFO - Connection to tcp://10.42.2.45:59376 has been closed.
+2023-02-04 16:56:48,517 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.2.45:36787', status: running, memory: 0, processing: 0>
+2023-02-04 16:56:48,517 - distributed.core - INFO - Removing comms to tcp://10.42.2.45:36787
+2023-02-04 16:56:48,519 - distributed.core - INFO - Connection to tcp://10.42.1.42:46152 has been closed.
+2023-02-04 16:56:48,519 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.1.42:33393', status: running, memory: 95, processing: 0>
+2023-02-04 16:56:48,519 - distributed.core - INFO - Removing comms to tcp://10.42.1.42:33393
+2023-02-04 16:56:48,533 - distributed.core - INFO - Connection to tcp://10.42.1.41:39822 has been closed.
+2023-02-04 16:56:48,533 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.1.41:42735', status: running, memory: 161, processing: 9>
+2023-02-04 16:56:48,534 - distributed.core - INFO - Removing comms to tcp://10.42.1.41:42735
+2023-02-04 16:56:48,552 - distributed.scheduler - INFO - Lost all workers
+2023-02-04 16:57:04,603 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.47:35995', status: init, memory: 0, processing: 0>
+2023-02-04 16:57:04,604 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.47:35995
+2023-02-04 16:57:04,604 - distributed.core - INFO - Starting established connection to tcp://10.42.2.47:52682
+2023-02-04 16:57:04,961 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.46:36193', status: init, memory: 0, processing: 0>
+2023-02-04 16:57:04,962 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.46:36193
+2023-02-04 16:57:04,962 - distributed.core - INFO - Starting established connection to tcp://10.42.2.46:57986
+2023-02-04 16:57:29,021 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.1.43:35999', status: init, memory: 0, processing: 0>
+2023-02-04 16:57:29,022 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.1.43:35999
+2023-02-04 16:57:29,022 - distributed.core - INFO - Starting established connection to tcp://10.42.1.43:44666
+2023-02-04 17:06:19,540 - distributed.core - INFO - Connection to tcp://10.42.2.47:52682 has been closed.
+2023-02-04 17:06:19,541 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.2.47:35995', status: running, memory: 128, processing: 0>
+2023-02-04 17:06:19,541 - distributed.core - INFO - Removing comms to tcp://10.42.2.47:35995
+2023-02-04 17:06:19,567 - distributed.core - INFO - Connection to tcp://10.42.1.43:44666 has been closed.
+2023-02-04 17:06:19,568 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.1.43:35999', status: running, memory: 0, processing: 9>
+2023-02-04 17:06:19,568 - distributed.core - INFO - Removing comms to tcp://10.42.1.43:35999
+2023-02-04 17:06:19,569 - distributed.core - INFO - Connection to tcp://10.42.2.46:57986 has been closed.
+2023-02-04 17:06:19,569 - distributed.scheduler - INFO - Remove worker <WorkerState 'tcp://10.42.2.46:36193', status: running, memory: 128, processing: 9>
+2023-02-04 17:06:19,570 - distributed.core - INFO - Removing comms to tcp://10.42.2.46:36193
+2023-02-04 17:06:19,586 - distributed.scheduler - INFO - Lost all workers
+2023-02-04 17:06:19,587 - distributed.batched - INFO - Batched Comm Closed <TCP (closed) Scheduler connection to worker local=tcp://10.42.2.30:8786 remote=tcp://10.42.2.46:57986>
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/distributed/comm/tcp.py", line 317, in write
+    raise StreamClosedError()
+tornado.iostream.StreamClosedError: Stream is closed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/distributed/batched.py", line 115, in _background_send
+    nbytes = yield coro
+  File "/opt/conda/lib/python3.8/site-packages/tornado/gen.py", line 769, in run
+    value = future.result()
+  File "/opt/conda/lib/python3.8/site-packages/distributed/comm/tcp.py", line 328, in write
+    convert_stream_closed_error(self, e)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/comm/tcp.py", line 144, in convert_stream_closed_error
+    raise CommClosedError(f"in {obj}: {exc}") from exc
+distributed.comm.core.CommClosedError: in <TCP (closed) Scheduler connection to worker local=tcp://10.42.2.30:8786 remote=tcp://10.42.2.46:57986>: Stream is closed
+2023-02-04 17:06:19,588 - distributed.batched - INFO - Batched Comm Closed <TCP (closed) Scheduler connection to worker local=tcp://10.42.2.30:8786 remote=tcp://10.42.1.43:44666>
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/distributed/comm/tcp.py", line 317, in write
+    raise StreamClosedError()
+tornado.iostream.StreamClosedError: Stream is closed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/distributed/batched.py", line 115, in _background_send
+    nbytes = yield coro
+  File "/opt/conda/lib/python3.8/site-packages/tornado/gen.py", line 769, in run
+    value = future.result()
+  File "/opt/conda/lib/python3.8/site-packages/distributed/comm/tcp.py", line 328, in write
+    convert_stream_closed_error(self, e)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/comm/tcp.py", line 144, in convert_stream_closed_error
+    raise CommClosedError(f"in {obj}: {exc}") from exc
+distributed.comm.core.CommClosedError: in <TCP (closed) Scheduler connection to worker local=tcp://10.42.2.30:8786 remote=tcp://10.42.1.43:44666>: Stream is closed
+2023-02-04 17:06:57,435 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.48:42827', status: init, memory: 0, processing: 0>
+2023-02-04 17:06:57,436 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.48:42827
+2023-02-04 17:06:57,436 - distributed.core - INFO - Starting established connection to tcp://10.42.2.48:47952
+2023-02-04 17:06:57,496 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.49:45775', status: init, memory: 0, processing: 0>
+2023-02-04 17:06:57,497 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.49:45775
+2023-02-04 17:06:57,497 - distributed.core - INFO - Starting established connection to tcp://10.42.2.49:54358
+2023-02-04 17:07:05,494 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.1.44:36909', status: init, memory: 0, processing: 0>
+2023-02-04 17:07:05,495 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.1.44:36909
+2023-02-04 17:07:05,495 - distributed.core - INFO - Starting established connection to tcp://10.42.1.44:53292
+2023-02-04 17:16:17,404 - distributed.scheduler - INFO - Receive client connection: Client-a2adfce0-a4af-11ed-8301-c60e4edded2c
+2023-02-04 17:16:17,404 - distributed.core - INFO - Starting established connection to tcp://10.42.1.39:37980
+2023-02-04 17:16:28,678 - distributed.worker - INFO - Run out-of-band function 'lambda'
+2023-02-04 17:19:29,095 - distributed.scheduler - INFO - Remove client Client-a2adfce0-a4af-11ed-8301-c60e4edded2c
+2023-02-04 17:19:29,119 - distributed.core - INFO - Received 'close-stream' from tcp://10.42.1.39:37980; closing.
+2023-02-04 17:19:29,120 - distributed.scheduler - INFO - Remove client Client-a2adfce0-a4af-11ed-8301-c60e4edded2c
+2023-02-04 17:19:29,121 - distributed.scheduler - INFO - Close client connection: Client-a2adfce0-a4af-11ed-8301-c60e4edded2c
+2023-02-04 17:19:29,832 - distributed.core - INFO - Connection to tcp://10.42.1.39:50322 has been closed.
+2023-02-04 17:19:29,832 - distributed.scheduler - INFO - Remove client Client-105f80ec-a4ab-11ed-8301-c60e4edded2c
+2023-02-04 17:19:29,832 - distributed.core - INFO - Connection to tcp://10.42.1.39:41718 has been closed.
+2023-02-04 17:19:29,832 - distributed.scheduler - INFO - Remove client Client-7b7f3efb-a49c-11ed-8301-c60e4edded2c
+2023-02-04 17:19:29,832 - distributed.core - INFO - Connection to tcp://10.42.1.39:44122 has been closed.
+2023-02-04 17:19:29,832 - distributed.scheduler - INFO - Remove client Client-c3843a0a-a498-11ed-8301-c60e4edded2c
+2023-02-04 17:19:29,833 - distributed.scheduler - INFO - Close client connection: Client-105f80ec-a4ab-11ed-8301-c60e4edded2c
+2023-02-04 17:19:29,833 - distributed.scheduler - INFO - Close client connection: Client-7b7f3efb-a49c-11ed-8301-c60e4edded2c
+2023-02-04 17:19:29,833 - distributed.scheduler - INFO - Close client connection: Client-c3843a0a-a498-11ed-8301-c60e4edded2c
+2023-02-04 17:21:20,972 - distributed.scheduler - INFO - Receive client connection: Client-573c39fd-a4b0-11ed-8602-c60e4edded2c
+2023-02-04 17:21:20,973 - distributed.core - INFO - Starting established connection to tcp://10.42.1.39:48304
+2023-02-04 17:26:06,523 - distributed.scheduler - INFO - Remove client Client-573c39fd-a4b0-11ed-8602-c60e4edded2c
+2023-02-04 17:26:06,524 - distributed.core - INFO - Received 'close-stream' from tcp://10.42.1.39:48304; closing.
+2023-02-04 17:26:06,524 - distributed.scheduler - INFO - Remove client Client-573c39fd-a4b0-11ed-8602-c60e4edded2c
+2023-02-04 17:26:06,524 - distributed.scheduler - INFO - Close client connection: Client-573c39fd-a4b0-11ed-8602-c60e4edded2c
+2023-02-04 17:36:53,015 - distributed.scheduler - INFO - Receive client connection: Client-82cb5ebb-a4b2-11ed-867a-c60e4edded2c
+2023-02-04 17:36:53,015 - distributed.core - INFO - Starting established connection to tcp://10.42.1.39:58290
+2023-02-04 17:40:32,012 - bokeh.application.handlers.function - ERROR - '<' not supported between instances of 'NoneType' and 'NoneType'
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/distributed/utils.py", line 747, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 4188, in graph_doc
+    graph = TaskGraph(scheduler, sizing_mode="stretch_both")
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 2243, in __init__
+    self.layout = GraphLayout(scheduler)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/diagnostics/graph_layout.py", line 41, in __init__
+    self.update_graph(
+  File "/opt/conda/lib/python3.8/site-packages/distributed/diagnostics/graph_layout.py", line 51, in update_graph
+    stack = sorted(tasks, key=lambda k: priority.get(k, 0), reverse=True)
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+2023-02-04 17:40:32,012 - tornado.application - ERROR - Uncaught exception GET /graph (127.0.0.1)
+HTTPServerRequest(protocol='http', host='131.154.96.42:8081', method='GET', uri='/graph', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/tornado/web.py", line 1713, in _execute
+    result = await result
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/server/views/doc_handler.py", line 54, in get
+    session = await self.get_session()
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/server/views/session_handler.py", line 144, in get_session
+    session = await self.application_context.create_session_if_needed(session_id, self.request, token)
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/server/contexts.py", line 243, in create_session_if_needed
+    self._application.initialize_document(doc)
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/application/application.py", line 194, in initialize_document
+    h.modify_document(doc)
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/application/handlers/function.py", line 143, in modify_document
+    self._func(doc)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/utils.py", line 747, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 4188, in graph_doc
+    graph = TaskGraph(scheduler, sizing_mode="stretch_both")
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 2243, in __init__
+    self.layout = GraphLayout(scheduler)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/diagnostics/graph_layout.py", line 41, in __init__
+    self.update_graph(
+  File "/opt/conda/lib/python3.8/site-packages/distributed/diagnostics/graph_layout.py", line 51, in update_graph
+    stack = sorted(tasks, key=lambda k: priority.get(k, 0), reverse=True)
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+2023-02-04 17:40:36,178 - bokeh.application.handlers.function - ERROR - '<' not supported between instances of 'NoneType' and 'NoneType'
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/distributed/utils.py", line 747, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 4188, in graph_doc
+    graph = TaskGraph(scheduler, sizing_mode="stretch_both")
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 2243, in __init__
+    self.layout = GraphLayout(scheduler)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/diagnostics/graph_layout.py", line 41, in __init__
+    self.update_graph(
+  File "/opt/conda/lib/python3.8/site-packages/distributed/diagnostics/graph_layout.py", line 51, in update_graph
+    stack = sorted(tasks, key=lambda k: priority.get(k, 0), reverse=True)
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+2023-02-04 17:40:36,178 - tornado.application - ERROR - Uncaught exception GET /graph (127.0.0.1)
+HTTPServerRequest(protocol='http', host='131.154.96.42:8081', method='GET', uri='/graph', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/tornado/web.py", line 1713, in _execute
+    result = await result
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/server/views/doc_handler.py", line 54, in get
+    session = await self.get_session()
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/server/views/session_handler.py", line 144, in get_session
+    session = await self.application_context.create_session_if_needed(session_id, self.request, token)
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/server/contexts.py", line 243, in create_session_if_needed
+    self._application.initialize_document(doc)
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/application/application.py", line 194, in initialize_document
+    h.modify_document(doc)
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/application/handlers/function.py", line 143, in modify_document
+    self._func(doc)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/utils.py", line 747, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 4188, in graph_doc
+    graph = TaskGraph(scheduler, sizing_mode="stretch_both")
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 2243, in __init__
+    self.layout = GraphLayout(scheduler)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/diagnostics/graph_layout.py", line 41, in __init__
+    self.update_graph(
+  File "/opt/conda/lib/python3.8/site-packages/distributed/diagnostics/graph_layout.py", line 51, in update_graph
+    stack = sorted(tasks, key=lambda k: priority.get(k, 0), reverse=True)
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+Exception ignored in: <function TaskGraph.__del__ at 0x7fbe8de78e50>
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 2421, in __del__
+    self.scheduler.remove_plugin(name=self.layout.name)
+AttributeError: 'TaskGraph' object has no attribute 'layout'
+Exception ignored in: <function TaskGraph.__del__ at 0x7fbe8de78e50>
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 2421, in __del__
+    self.scheduler.remove_plugin(name=self.layout.name)
+AttributeError: 'TaskGraph' object has no attribute 'layout'
+2023-02-04 17:40:40,791 - bokeh.application.handlers.function - ERROR - '<' not supported between instances of 'NoneType' and 'NoneType'
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/distributed/utils.py", line 747, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 4188, in graph_doc
+    graph = TaskGraph(scheduler, sizing_mode="stretch_both")
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 2243, in __init__
+    self.layout = GraphLayout(scheduler)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/diagnostics/graph_layout.py", line 41, in __init__
+    self.update_graph(
+  File "/opt/conda/lib/python3.8/site-packages/distributed/diagnostics/graph_layout.py", line 51, in update_graph
+    stack = sorted(tasks, key=lambda k: priority.get(k, 0), reverse=True)
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+2023-02-04 17:40:40,792 - tornado.application - ERROR - Uncaught exception GET /graph (127.0.0.1)
+HTTPServerRequest(protocol='http', host='131.154.96.42:8081', method='GET', uri='/graph', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/tornado/web.py", line 1713, in _execute
+    result = await result
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/server/views/doc_handler.py", line 54, in get
+    session = await self.get_session()
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/server/views/session_handler.py", line 144, in get_session
+    session = await self.application_context.create_session_if_needed(session_id, self.request, token)
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/server/contexts.py", line 243, in create_session_if_needed
+    self._application.initialize_document(doc)
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/application/application.py", line 194, in initialize_document
+    h.modify_document(doc)
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/application/handlers/function.py", line 143, in modify_document
+    self._func(doc)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/utils.py", line 747, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 4188, in graph_doc
+    graph = TaskGraph(scheduler, sizing_mode="stretch_both")
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 2243, in __init__
+    self.layout = GraphLayout(scheduler)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/diagnostics/graph_layout.py", line 41, in __init__
+    self.update_graph(
+  File "/opt/conda/lib/python3.8/site-packages/distributed/diagnostics/graph_layout.py", line 51, in update_graph
+    stack = sorted(tasks, key=lambda k: priority.get(k, 0), reverse=True)
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+Exception ignored in: <function TaskGraph.__del__ at 0x7fbe8de78e50>
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 2421, in __del__
+    self.scheduler.remove_plugin(name=self.layout.name)
+AttributeError: 'TaskGraph' object has no attribute 'layout'
+2023-02-04 17:41:48,169 - bokeh.application.handlers.function - ERROR - '<' not supported between instances of 'NoneType' and 'NoneType'
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/distributed/utils.py", line 747, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 4188, in graph_doc
+    graph = TaskGraph(scheduler, sizing_mode="stretch_both")
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 2243, in __init__
+    self.layout = GraphLayout(scheduler)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/diagnostics/graph_layout.py", line 41, in __init__
+    self.update_graph(
+  File "/opt/conda/lib/python3.8/site-packages/distributed/diagnostics/graph_layout.py", line 51, in update_graph
+    stack = sorted(tasks, key=lambda k: priority.get(k, 0), reverse=True)
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+2023-02-04 17:41:48,169 - tornado.application - ERROR - Uncaught exception GET /graph (127.0.0.1)
+HTTPServerRequest(protocol='http', host='131.154.96.42:8081', method='GET', uri='/graph', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/tornado/web.py", line 1713, in _execute
+    result = await result
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/server/views/doc_handler.py", line 54, in get
+    session = await self.get_session()
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/server/views/session_handler.py", line 144, in get_session
+    session = await self.application_context.create_session_if_needed(session_id, self.request, token)
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/server/contexts.py", line 243, in create_session_if_needed
+    self._application.initialize_document(doc)
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/application/application.py", line 194, in initialize_document
+    h.modify_document(doc)
+  File "/opt/conda/lib/python3.8/site-packages/bokeh/application/handlers/function.py", line 143, in modify_document
+    self._func(doc)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/utils.py", line 747, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 4188, in graph_doc
+    graph = TaskGraph(scheduler, sizing_mode="stretch_both")
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 2243, in __init__
+    self.layout = GraphLayout(scheduler)
+  File "/opt/conda/lib/python3.8/site-packages/distributed/diagnostics/graph_layout.py", line 41, in __init__
+    self.update_graph(
+  File "/opt/conda/lib/python3.8/site-packages/distributed/diagnostics/graph_layout.py", line 51, in update_graph
+    stack = sorted(tasks, key=lambda k: priority.get(k, 0), reverse=True)
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+2023-02-04 17:44:45,279 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.50:44775', status: init, memory: 0, processing: 0>
+2023-02-04 17:44:45,280 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.50:44775
+2023-02-04 17:44:45,280 - distributed.core - INFO - Starting established connection to tcp://10.42.2.50:42032
+2023-02-04 17:44:45,521 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.51:35053', status: init, memory: 0, processing: 0>
+2023-02-04 17:44:45,522 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.51:35053
+2023-02-04 17:44:45,522 - distributed.core - INFO - Starting established connection to tcp://10.42.2.51:56078
+2023-02-04 17:44:45,887 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.2.52:43049', status: init, memory: 0, processing: 0>
+2023-02-04 17:44:45,888 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.2.52:43049
+2023-02-04 17:44:45,888 - distributed.core - INFO - Starting established connection to tcp://10.42.2.52:33624
+2023-02-04 17:44:46,305 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.1.45:40939', status: init, memory: 0, processing: 0>
+2023-02-04 17:44:46,306 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.1.45:40939
+2023-02-04 17:44:46,306 - distributed.core - INFO - Starting established connection to tcp://10.42.1.45:39252
+Exception ignored in: <function TaskGraph.__del__ at 0x7fbe8de78e50>
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/site-packages/distributed/dashboard/components/scheduler.py", line 2421, in __del__
+    self.scheduler.remove_plugin(name=self.layout.name)
+AttributeError: 'TaskGraph' object has no attribute 'layout'
+2023-02-04 17:44:46,309 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.1.48:36661', status: init, memory: 0, processing: 0>
+2023-02-04 17:44:46,310 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.1.48:36661
+2023-02-04 17:44:46,310 - distributed.core - INFO - Starting established connection to tcp://10.42.1.48:45750
+2023-02-04 17:44:46,311 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.1.47:33917', status: init, memory: 0, processing: 0>
+2023-02-04 17:44:46,312 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.1.47:33917
+2023-02-04 17:44:46,312 - distributed.core - INFO - Starting established connection to tcp://10.42.1.47:34360
+2023-02-04 17:44:46,434 - distributed.scheduler - INFO - Register worker <WorkerState 'tcp://10.42.1.46:40641', status: init, memory: 0, processing: 0>
+2023-02-04 17:44:46,435 - distributed.scheduler - INFO - Starting worker compute stream, tcp://10.42.1.46:40641
+2023-02-04 17:44:46,435 - distributed.core - INFO - Starting established connection to tcp://10.42.1.46:45418
+2023-02-04 17:47:03,504 - distributed.scheduler - INFO - Remove client Client-82cb5ebb-a4b2-11ed-867a-c60e4edded2c
+2023-02-04 17:47:03,505 - distributed.core - INFO - Received 'close-stream' from tcp://10.42.1.39:58290; closing.
+2023-02-04 17:47:03,506 - distributed.scheduler - INFO - Remove client Client-82cb5ebb-a4b2-11ed-867a-c60e4edded2c
+2023-02-04 17:47:03,507 - distributed.scheduler - INFO - Close client connection: Client-82cb5ebb-a4b2-11ed-867a-c60e4edded2c
