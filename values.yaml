@@ -100,14 +100,14 @@ worker:
     tag: latest
   livenessProbe: {}
   metrics:
-    enabled: true
+    enabled: false
     podMonitor:
       additionalLabels: {}
-      enabled: true
+      enabled: false
       interval: 30s
       jobLabel: ""
       metricRelabelings: []
-      namespace: "monitoring"
+      namespace: ""
       namespaceSelector: {}
       podTargetLabels: []
   mounts: {}    
