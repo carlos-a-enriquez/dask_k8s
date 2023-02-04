@@ -107,7 +107,7 @@ worker:
       interval: 30s
       jobLabel: ""
       metricRelabelings: []
-      namespace: ""
+      namespace: "monitoring"
       namespaceSelector: {}
       podTargetLabels: []
   mounts: {}    
