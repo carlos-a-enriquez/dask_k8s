@@ -100,7 +100,7 @@ worker:
     tag: latest
   livenessProbe: {}
   metrics:
-    enabled: false
+    enabled: true
     podMonitor:
       additionalLabels: {}
       enabled: true
