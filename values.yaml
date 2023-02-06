@@ -49,8 +49,8 @@ scheduler:
   image:
     pullPolicy: IfNotPresent
     pullSecrets: null
-    repository: carloskez/dask_pyscenic:debug
-    tag: 2023.1.0
+    repository: carloskez/dask_pyscenic
+    tag: debug
   livenessProbe: {}
   loadBalancerIP: null
   metrics:
@@ -96,8 +96,8 @@ worker:
     dask_worker: dask-worker
     pullPolicy: Always
     pullSecrets: null
-    repository: carloskez/dask_pyscenic:debug
-    tag: latest
+    repository: carloskez/dask_pyscenic
+    tag: debug
   livenessProbe: {}
   metrics:
     enabled: false
