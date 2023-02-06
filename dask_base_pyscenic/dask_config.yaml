@@ -3,3 +3,4 @@ logging:
   distributed.client: warning
   bokeh: error
   distributed.worker: debug
+  distributed.scheduler: debug

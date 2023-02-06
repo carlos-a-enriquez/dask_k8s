@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: dask_pyscenic image build
 
 on:
   push:
@@ -8,13 +8,24 @@ on:
 
 jobs:
 
-  build:
+  build_normal:
 
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
     - name: Build the Docker image
       run: docker build ./dask_base_pyscenic/. --file ./dask_base_pyscenic/Dockerfile --tag carloskez/dask_pyscenic
     - name: Push the image to Dockerhub
       run: docker login -u carloskez -p ${{secrets.DOCKER_TOKEN}} && docker push carloskez/dask_pyscenic
+
+  build_debug:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
+    - name: Build the Docker image
+      run: docker build ./dask_base_pyscenic/. --file ./dask_base_pyscenic/Dockerfile_debug --tag carloskez/dask_pyscenic:debug
+    - name: Push the image to Dockerhub
+      run: docker login -u carloskez -p ${{secrets.DOCKER_TOKEN}} && docker push carloskez/dask_pyscenic:debug
