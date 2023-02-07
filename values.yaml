@@ -47,10 +47,10 @@ scheduler:
   enabled: true
   extraArgs: []
   image:
-    pullPolicy: IfNotPresent
+    pullPolicy: Always
     pullSecrets: null
     repository: carloskez/dask_pyscenic
-    tag: debug
+    tag: latest
   livenessProbe: {}
   loadBalancerIP: null
   metrics:
@@ -97,7 +97,7 @@ worker:
     pullPolicy: Always
     pullSecrets: null
     repository: carloskez/dask_pyscenic
-    tag: debug
+    tag: latest
   livenessProbe: {}
   metrics:
     enabled: false
