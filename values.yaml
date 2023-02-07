@@ -50,7 +50,7 @@ scheduler:
     pullPolicy: Always
     pullSecrets: null
     repository: carloskez/dask_pyscenic
-    tag: latest
+    tag: debug
   livenessProbe: {}
   loadBalancerIP: null
   metrics:
@@ -97,7 +97,7 @@ worker:
     pullPolicy: Always
     pullSecrets: null
     repository: carloskez/dask_pyscenic
-    tag: latest
+    tag: debug
   livenessProbe: {}
   metrics:
     enabled: false
