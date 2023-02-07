@@ -47,7 +47,7 @@ scheduler:
   enabled: true
   extraArgs: []
   image:
-    pullPolicy: Always
+    pullPolicy: IfNotPresent
     pullSecrets: null
     repository: carloskez/dask_pyscenic
     tag: debug
@@ -94,7 +94,7 @@ worker:
   extraArgs: []
   image:
     dask_worker: dask-worker
-    pullPolicy: Always
+    pullPolicy: IfNotPresent
     pullSecrets: null
     repository: carloskez/dask_pyscenic
     tag: debug
@@ -115,14 +115,14 @@ worker:
   nodeSelector: {}
   portDashboard: 8790
   readinessProbe: {}
-  replicas: 2
+  replicas: 16
   resources: 
     limits:
       cpu: 1
       memory: 16G
     requests:
       cpu: 1
-      memory: 4G
+      memory: 1G
   securityContext: {}
   strategy:
     type: RollingUpdate
