@@ -386,7 +386,7 @@ prometheus-pushgateway:
     annotations: {}
     enabled: false
     existingClaim: ""
-    mountPath: /data
+    mountPath: /data_prometheus
     size: 2Gi
     subPath: ""
   persistentVolumeLabels: {}
