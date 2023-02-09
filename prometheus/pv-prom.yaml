@@ -11,9 +11,12 @@ spec:
     storage: 1Gi
   volumeMode: Filesystem
   accessModes:
+  - ReadWriteOnce
   - ReadWriteMany
+  - ReadOnlyMany
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: managed-nfs
+  storageClassName: nfs-class
   nfs:
     server: 192.168.20.221
     path: "/mnt/nfs/promdata"
+    readOnly: false
