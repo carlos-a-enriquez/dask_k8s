@@ -9,9 +9,9 @@ spec:
   accessModes:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: local-storage
+  storageClassName: local-storage-prom
   local:
-    path: /prometheus_alert
+    path: /data/prometheus_alert
   nodeAffinity:
     required:
       nodeSelectorTerms:
