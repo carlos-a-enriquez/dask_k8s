@@ -59,7 +59,7 @@ alertmanager:
     enabled: true
     size: 1Gi
   persistentVolume:
-    storageClass: local-storage
+    storageClass: local-storage-prom
   podAnnotations: {}
   podAntiAffinity: ""
   podAntiAffinityTopologyKey: kubernetes.io/hostname
@@ -497,7 +497,7 @@ server:
     labels: {}
     mountPath: "/data"
     size: 2Gi
-    storageClass: local-storage
+    storageClass: local-storage-prom
     subPath: ""
   podAnnotations: {}
   podDisruptionBudget:
