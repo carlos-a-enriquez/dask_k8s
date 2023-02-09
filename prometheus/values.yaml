@@ -57,9 +57,9 @@ alertmanager:
     accessModes:
     - ReadWriteOnce
     enabled: true
-    size: 2Gi
+    size: 1Gi
   persistentVolume:
-    storageClass: nfs-class
+    storageClass: local-storage
   podAnnotations: {}
   podAntiAffinity: ""
   podAntiAffinityTopologyKey: kubernetes.io/hostname
@@ -490,16 +490,14 @@ server:
   nodeSelector: {}
   persistentVolume:
     accessModes:
-    - ReadWriteMany
     - ReadWriteOnce
-    - ReadOnlyMany
     annotations: {}
     enabled: true
     existingClaim: ""
     labels: {}
     mountPath: "/data"
     size: 1Gi
-    storageClass: nfs-class
+    storageClass: local-storage
     subPath: ""
   podAnnotations: {}
   podDisruptionBudget:
