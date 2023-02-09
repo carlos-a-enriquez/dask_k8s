@@ -58,6 +58,7 @@ alertmanager:
     - ReadWriteOnce
     enabled: true
     size: 1Gi
+    storageClass: local-storage-prom
   persistentVolume:
     storageClass: local-storage-prom
   podAnnotations: {}
