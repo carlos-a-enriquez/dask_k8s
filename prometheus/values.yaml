@@ -497,7 +497,7 @@ server:
     enabled: true
     existingClaim: ""
     labels: {}
-    mountPath: "/mnt/nfs/promdata"
+    mountPath: "/data"
     size: 1Gi
     storageClass: nfs-class
     subPath: ""
