@@ -490,14 +490,16 @@ server:
   nodeSelector: {}
   persistentVolume:
     accessModes:
+    - ReadWriteMany
     - ReadWriteOnce
+    - ReadOnlyMany
     annotations: {}
     enabled: true
     existingClaim: ""
     labels: {}
-    mountPath: /data
-    size: 8Gi
-    storageClass: default
+    mountPath: "/mnt/nfs/promdata"
+    size: 1Gi
+    storageClass: nfs-class
     subPath: ""
   podAnnotations: {}
   podDisruptionBudget:
