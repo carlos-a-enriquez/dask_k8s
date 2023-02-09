@@ -492,10 +492,10 @@ server:
     accessModes:
     - ReadWriteOnce
     annotations: {}
-    enabled: true
+    enabled: false
     existingClaim: ""
     labels: {}
-    mountPath: /data
+    mountPath: /data_prometheus
     size: 8Gi
     storageClass: default
     subPath: ""
