@@ -59,7 +59,7 @@ alertmanager:
     enabled: true
     size: 2Gi
   persistentVolume:
-    storageClass: default
+    storageClass: nfs-class
   podAnnotations: {}
   podAntiAffinity: ""
   podAntiAffinityTopologyKey: kubernetes.io/hostname
