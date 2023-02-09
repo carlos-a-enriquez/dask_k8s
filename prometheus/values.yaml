@@ -384,7 +384,7 @@ prometheus-pushgateway:
     accessModes:
     - ReadWriteOnce
     annotations: {}
-    enabled: false
+    enabled: true
     existingClaim: ""
     mountPath: /data_prometheus
     size: 2Gi
