@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-prometheus
+  namespace: monitoring
+  labels:
+    type: nfs
+    app: prometheus-deployment
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+  - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: managed-nfs
+  nfs:
+    server: 192.168.20.221
+    path: "/mnt/nfs/promdata"
