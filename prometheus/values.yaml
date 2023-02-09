@@ -496,7 +496,7 @@ server:
     existingClaim: ""
     labels: {}
     mountPath: "/data"
-    size: 1Gi
+    size: 2Gi
     storageClass: local-storage
     subPath: ""
   podAnnotations: {}
