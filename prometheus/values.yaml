@@ -58,9 +58,7 @@ alertmanager:
     - ReadWriteOnce
     enabled: true
     size: 1Gi
-    storageClassName: local-storage-prom
-  persistentVolume:
-    storageClass: local-storage-prom
+    storageClass: local-storage-prom 
   podAnnotations: {}
   podAntiAffinity: ""
   podAntiAffinityTopologyKey: kubernetes.io/hostname
