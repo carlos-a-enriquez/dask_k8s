@@ -37,6 +37,7 @@ kubectl create namespace monitoring
 #Installing Prometheus
 #Version: https://artifacthub.io/packages/helm/prometheus-community/prometheus
 helm install prometheus prometheus-community/prometheus \
+--values values.yaml
 --version 19.3.3 \
 --namespace monitoring
 
