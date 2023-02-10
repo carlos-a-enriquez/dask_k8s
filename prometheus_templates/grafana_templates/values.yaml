@@ -10,6 +10,7 @@ datasources:
 persistence:
   enabled: true
   storageClassName: local-storage-prom
+  size: 5Gi
 adminUser: admin
 adminPassword: grafana
 service:
