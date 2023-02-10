@@ -4,7 +4,7 @@ datasources:
     datasources:
     - name: Prometheus
       type: prometheus
-      url: http://<prometheus-server>.<monitoring_namespace>.<svc.cluster.local>
+      url: prometheus-server.monitoring.svc.cluster.local
       access: proxy
       isDefault: true
 persistence:
