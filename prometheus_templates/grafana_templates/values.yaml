@@ -1,0 +1,17 @@
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+    - name: Prometheus
+      type: prometheus
+      url: http://<prometheus-server>.<monitoring_namespace>.<svc.cluster.local>
+      access: proxy
+      isDefault: true
+persistence:
+  enabled: true
+  storageClassName: local-storage-prom
+adminUser: admin
+adminPassword: grafana
+service:
+  type: NodePort
+  nodePort: 31075
