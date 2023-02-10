@@ -11,7 +11,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-storage-prom
   local:
-    path: /data/prometheus_alert
+    path: /data2/prometheus_alert
   nodeAffinity:
     required:
       nodeSelectorTerms:
