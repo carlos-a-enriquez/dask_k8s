@@ -1038,7 +1038,14 @@ prometheus:
     serviceMonitorSelector: {}
     serviceMonitorSelectorNilUsesHelmValues: true
     shards: 1
-    storageSpec: {}
+    storageSpec: 
+      volumeClaimTemplate:
+        spec:
+          storageClassName: local-storage-prom
+          resources:
+            requests:
+              storage: 2Gi
+        selector: {}
     thanos: {}
     tolerations: []
     topologySpreadConstraints: []
