@@ -1045,7 +1045,6 @@ prometheus:
           resources:
             requests:
               storage: 2Gi
-        selector: {}
     thanos: {}
     tolerations: []
     topologySpreadConstraints: []
