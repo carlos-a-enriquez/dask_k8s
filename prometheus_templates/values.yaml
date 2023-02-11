@@ -462,7 +462,7 @@ server:
   extraVolumes: []
   global:
     evaluation_interval: 1m
-    scrape_interval: 1m
+    scrape_interval: 15s
     scrape_timeout: 10s
   hostAliases: []
   hostNetwork: false
