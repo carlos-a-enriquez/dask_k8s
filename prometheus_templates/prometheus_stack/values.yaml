@@ -454,7 +454,8 @@ grafana:
     port: 80
     portName: http-web
     targetPort: 3000
-    type: ClusterIP
+    nodePort: 31075
+    type: NodePort
   serviceAccount:
     autoMount: true
     create: true
