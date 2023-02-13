@@ -1077,7 +1077,7 @@ prometheus:
     publishNotReadyAddresses: false
     sessionAffinity: ""
     targetPort: 9090
-    type: ClusterIP
+    type: NodePort
   serviceAccount:
     annotations: {}
     create: true
