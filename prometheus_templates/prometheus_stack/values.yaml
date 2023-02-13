@@ -961,6 +961,13 @@ prometheus:
         scrape_interval: 5s
         static_configs: 
           - targets:  ['myrelease-dask-scheduler.default.svc.cluster.local:80']
+      - job_name: 'dask-workers'
+        kubernetes_sd_configs:
+          - role: pod
+        relabel_configs:
+          - source_labels: [__meta_kubernetes_pod_label_app, __meta_kubernetes_pod_label_component]
+            regex: dask;worker
+            action: keep
     additionalScrapeConfigsSecret: {}
     affinity: {}
     alertingEndpoints: []
