@@ -54,7 +54,7 @@ scheduler:
   livenessProbe: {}
   loadBalancerIP: null
   metrics:
-    enabled: false
+    enabled: true
     serviceMonitor:
       additionalLabels: {}
       enabled: false
@@ -100,7 +100,7 @@ worker:
     tag: b283893d2e4e8556bd6db81af48b6429deb50bff5d71d4aad0a7a6b7a91286e6 #debug image
   livenessProbe: {}
   metrics:
-    enabled: false
+    enabled: true
     podMonitor:
       additionalLabels: {}
       enabled: false
