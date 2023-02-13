@@ -956,7 +956,11 @@ prometheus:
     additionalPrometheusSecretsAnnotations: {}
     additionalRemoteRead: []
     additionalRemoteWrite: []
-    additionalScrapeConfigs: []
+    additionalScrapeConfigs: 
+      - job_name: 'dask_scheduler'
+        scrapeInterval: 5s
+        static_configs: 
+          - targets:  ['myrelease-dask-scheduler.default.svc.cluster.local:8787']
     additionalScrapeConfigsSecret: {}
     affinity: {}
     alertingEndpoints: []
