@@ -960,7 +960,7 @@ prometheus:
       - job_name: 'dask_scheduler'
         scrape_interval: 5s
         static_configs: 
-          - targets:  ['http://myrelease-dask-scheduler.default.svc.cluster.local:80']
+          - targets:  ['myrelease-dask-scheduler.default.svc.cluster.local:80']
     additionalScrapeConfigsSecret: {}
     affinity: {}
     alertingEndpoints: []
