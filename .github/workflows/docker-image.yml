@@ -15,9 +15,9 @@ jobs:
     steps:
     - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
     - name: Build the Docker image
-      run: docker build ./dask_base_pyscenic/. --file ./dask_base_pyscenic/Dockerfile --tag carloskez/dask_pyscenic
+      run: docker build ./container_images/dask_base_pyscenic/. --file Dockerfile --tag carloskez/dask_pyscenic:latest
     - name: Push the image to Dockerhub
-      run: docker login -u carloskez -p ${{secrets.DOCKER_TOKEN}} && docker push carloskez/dask_pyscenic
+      run: docker login -u carloskez -p ${{secrets.DOCKER_TOKEN}} && docker push carloskez/dask_pyscenic:latest
 
   build_debug:
 
@@ -26,6 +26,6 @@ jobs:
     steps:
     - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
     - name: Build the Docker image
-      run: docker build ./dask_base_pyscenic/. --file ./dask_base_pyscenic/Dockerfile_debug --tag carloskez/dask_pyscenic:debug
+      run: docker build ./container_images/dask_base_pyscenic_debug/. --file Dockerfile --tag carloskez/dask_pyscenic:debug
     - name: Push the image to Dockerhub
       run: docker login -u carloskez -p ${{secrets.DOCKER_TOKEN}} && docker push carloskez/dask_pyscenic:debug
