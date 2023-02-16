@@ -1062,7 +1062,15 @@ prometheus:
     volumeMounts: []
     volumes: []
     walCompression: true
-    web: {}
+    web: 
+      tlsConfig:
+        keySecret:
+          key: tls.key
+          name: prometheus-tls
+        cert:
+          secret:
+            key: tls.cert
+            name: prometheus-tls
   service:
     additionalPorts: []
     annotations: {}
