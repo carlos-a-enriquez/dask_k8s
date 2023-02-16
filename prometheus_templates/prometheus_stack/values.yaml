@@ -1031,7 +1031,7 @@ prometheus:
     replicaExternalLabelNameClear: false
     replicas: 1
     resources: {}
-    retention: 10d
+    retention: 180d
     retentionSize: ""
     routePrefix: /
     ruleNamespaceSelector: {}
