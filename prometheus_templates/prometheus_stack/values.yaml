@@ -960,10 +960,10 @@ prometheus:
     additionalAlertRelabelConfigs: []
     additionalAlertRelabelConfigsSecret: {}
     additionalArgs: 
-      - name: --web.enable-lifecycle
-      - name: "--web.route-prefix"
+      - name: "web.enable-lifecycle"
+      - name: "web.route-prefix"
         value: "/"
-      - name: "--web.external-url"
+      - name: "web.external-url"
         value: "https://k8s-dk.mooo.com:30667/prom"
     additionalPrometheusSecretsAnnotations: {}
     additionalRemoteRead: []
