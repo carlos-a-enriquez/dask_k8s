@@ -307,6 +307,7 @@ grafana:
     server:
       domain: '{{ if (and .Values.ingress.enabled .Values.ingress.hosts) }}{{ .Values.ingress.hosts
         | first }}{{ else }}''''{{ end }}'
+      root_url: "https://k8s-dk.mooo.com:30667/grafana"
       serve_from_sub_path: true
   headlessService: false
   hostAliases: []
