@@ -929,7 +929,7 @@ prometheus:
       - k8s-dk.mooo.com
     labels: {}
     paths: 
-      - /
+      - /prom
     pathType: Prefix
     tls: 
       - secretName: prometheus-tls
