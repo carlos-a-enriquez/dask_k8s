@@ -997,7 +997,7 @@ prometheus:
     excludedFromEnforcement: []
     exemplars: ""
     externalLabels: {}
-    externalUrl: "k8s-dk.mooo.com"
+    externalUrl: "https://k8s-dk.mooo.com:30667/prom"
     hostAliases: []
     hostNetwork: false
     ignoreNamespaceSelectors: false
@@ -1040,7 +1040,7 @@ prometheus:
     resources: {}
     retention: 180d
     retentionSize: ""
-    routePrefix: /prom
+    routePrefix: /
     ruleNamespaceSelector: {}
     ruleSelector: {}
     ruleSelectorNilUsesHelmValues: true
