@@ -307,6 +307,7 @@ grafana:
     server:
       domain: '{{ if (and .Values.ingress.enabled .Values.ingress.hosts) }}{{ .Values.ingress.hosts
         | first }}{{ else }}''''{{ end }}'
+      serve_from_sub_path: true
   headlessService: false
   hostAliases: []
   image:
