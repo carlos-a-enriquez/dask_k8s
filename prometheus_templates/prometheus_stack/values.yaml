@@ -929,7 +929,7 @@ prometheus:
       - k8s-dk.mooo.com
     labels: {}
     paths: 
-      - /prom
+      - "/prom"
     pathType: Prefix
     tls: 
       - secretName: prometheus-tls
@@ -959,7 +959,10 @@ prometheus:
     additionalAlertManagerConfigsSecret: {}
     additionalAlertRelabelConfigs: []
     additionalAlertRelabelConfigsSecret: {}
-    additionalArgs: []
+    additionalArgs: 
+      - --web.enable-lifecycle
+      - --web.route-prefix=/
+      - --web.external-url=https://k8s-dk.mooo.com:30667/prom
     additionalPrometheusSecretsAnnotations: {}
     additionalRemoteRead: []
     additionalRemoteWrite: []
@@ -997,7 +1000,7 @@ prometheus:
     excludedFromEnforcement: []
     exemplars: ""
     externalLabels: {}
-    externalUrl: "https://k8s-dk.mooo.com:30667/prom"
+    externalUrl: ""
     hostAliases: []
     hostNetwork: false
     ignoreNamespaceSelectors: false
