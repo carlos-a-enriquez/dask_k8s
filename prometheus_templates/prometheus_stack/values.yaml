@@ -372,14 +372,20 @@ grafana:
       tlsConfig: {}
     tolerations: []
   ingress:
-    annotations: {}
-    enabled: false
+    annotations: 
+      nginx.ingress.kubernetes.io/rewrite-target: "/$2"
+    enabled: true
+    ingressClassName: nginx
     extraPaths: []
-    hosts: []
+    hosts: 
+      - k8s-dk.mooo.com 
     labels: {}
-    path: /
+    path: "/grafana(/|$)(.*)"
     pathType: Prefix
-    tls: []
+    tls: 
+      - secretName: prometheus-tls
+        hosts:
+          - k8s-dk.mooo.com
   initChownData:
     enabled: true
     image:
