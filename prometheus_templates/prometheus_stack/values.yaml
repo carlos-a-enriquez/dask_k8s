@@ -922,7 +922,8 @@ prometheus:
     annotations: {}
     data: {}
   ingress:
-    annotations: {}
+    annotations: 
+      nginx.ingress.kubernetes.io/rewrite-target: "/$2"
     enabled: true
     ingressClassName: nginx
     hosts: 
@@ -997,7 +998,7 @@ prometheus:
     excludedFromEnforcement: []
     exemplars: ""
     externalLabels: {}
-    externalUrl: "https://k8s-dk.mooo.com/prom"
+    externalUrl: "https://k8s-dk.mooo.com:30667/prom"
     hostAliases: []
     hostNetwork: false
     ignoreNamespaceSelectors: false
