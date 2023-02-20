@@ -1,16 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  creationTimestamp: "2023-02-20T14:23:27Z"
-  generation: 3
+  creationTimestamp: "2023-02-20T15:32:01Z"
+  generation: 2
   name: demo-localhost
   namespace: default
-  resourceVersion: "6546100"
-  uid: 1101117e-10f2-4069-a8d3-426161639644
+  resourceVersion: "6551259"
+  uid: c35f62ca-56f9-463d-903e-90e98517c685
 spec:
   ingressClassName: nginx
   rules:
-  - http:
+  - host: k8s-dk.mooo.com
+    http:
       paths:
       - backend:
           service:
@@ -20,7 +21,9 @@ spec:
         path: /
         pathType: Prefix
   tls:
-  - secretName: test-tls
+  - hosts:
+    - k8s-dk.mooo.com
+    secretName: test-tls
 status:
   loadBalancer:
     ingress:
