@@ -930,7 +930,7 @@ prometheus:
       - k8s-dk.mooo.com
     labels: {}
     paths: 
-      - "/prom(/|$)(.*)"
+      - "/prometheus(/|$)(.*)"
     pathType: Prefix
     tls: 
       - secretName: prometheus-tls
@@ -998,7 +998,7 @@ prometheus:
     excludedFromEnforcement: []
     exemplars: ""
     externalLabels: {}
-    externalUrl: "https://k8s-dk.mooo.com:30667/prom"
+    externalUrl: "https://k8s-dk.mooo.com:30667/prometheus"
     hostAliases: []
     hostNetwork: false
     ignoreNamespaceSelectors: false
