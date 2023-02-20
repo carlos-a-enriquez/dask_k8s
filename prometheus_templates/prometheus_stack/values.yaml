@@ -923,11 +923,18 @@ prometheus:
     data: {}
   ingress:
     annotations: {}
-    enabled: false
-    hosts: []
+    enabled: true
+    ingressClassName: nginx
+    hosts: 
+      - k8s-dk.mooo.com
     labels: {}
-    paths: []
-    tls: []
+    paths: 
+      - /
+    pathType: Prefix
+    tls: 
+      - secretName: prometheus-tls
+        hosts: 
+          - k8s-dk.mooo.com
   ingressPerReplica:
     annotations: {}
     enabled: false
