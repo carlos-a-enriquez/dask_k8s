@@ -462,8 +462,8 @@ grafana:
     port: 80
     portName: http-web
     targetPort: 3000
-    nodePort: 31075
-    type: NodePort
+    #nodePort: 31075
+    type: ClusterIP
   serviceAccount:
     autoMount: true
     create: true
@@ -1088,12 +1088,12 @@ prometheus:
     labels: {}
     loadBalancerIP: ""
     loadBalancerSourceRanges: []
-    nodePort: 30090
+    #nodePort: 30090
     port: 9090
     publishNotReadyAddresses: false
     sessionAffinity: ""
     targetPort: 9090
-    type: NodePort
+    type: ClusterIP
   serviceAccount:
     annotations: {}
     create: true
