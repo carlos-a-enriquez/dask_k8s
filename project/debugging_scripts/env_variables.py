@@ -1,3 +1,5 @@
+import os
+
 PROJECT = "/home/jovyan/work/dask_k8s/project"
 DATA_FOLDER="/tmp"
 RESOURCES_FOLDER="/resources"
