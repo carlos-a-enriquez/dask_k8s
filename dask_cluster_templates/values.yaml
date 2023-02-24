@@ -124,10 +124,10 @@ worker:
   replicas: 4
   resources: 
     limits:
-      cpu: 7
+      cpu: 6
       memory: 10G
     requests:
-      cpu: 7
+      cpu: 6
       memory: 10G
   securityContext: {}
   strategy:
