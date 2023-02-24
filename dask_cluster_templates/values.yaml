@@ -121,13 +121,13 @@ worker:
   nodeSelector: {}
   portDashboard: 8790
   readinessProbe: {}
-  replicas: 1
+  replicas: 4
   resources: 
     limits:
-      cpu: 6
+      cpu: 7
       memory: 10G
     requests:
-      cpu: 6
+      cpu: 7
       memory: 10G
   securityContext: {}
   strategy:
