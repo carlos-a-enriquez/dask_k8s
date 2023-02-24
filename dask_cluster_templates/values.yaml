@@ -50,7 +50,7 @@ scheduler:
     pullPolicy: IfNotPresent
     pullSecrets: null
     repository: carloskez/dask_pyscenic@sha256
-    tag: b283893d2e4e8556bd6db81af48b6429deb50bff5d71d4aad0a7a6b7a91286e6 #debug image
+    tag: e16a3b9333712e69ee0cee9d769f8f01d82c65317d21ffe5397af26f15ea0743 #debug image
   livenessProbe: {}
   loadBalancerIP: null
   metrics:
@@ -97,7 +97,7 @@ worker:
     pullPolicy: IfNotPresent
     pullSecrets: null
     repository: carloskez/dask_pyscenic@sha256
-    tag: b283893d2e4e8556bd6db81af48b6429deb50bff5d71d4aad0a7a6b7a91286e6 #debug image
+    tag: e16a3b9333712e69ee0cee9d769f8f01d82c65317d21ffe5397af26f15ea0743 #debug image
   livenessProbe: {}
   metrics:
     enabled: true
@@ -115,14 +115,14 @@ worker:
   nodeSelector: {}
   portDashboard: 8790
   readinessProbe: {}
-  replicas: 3
+  replicas: 9
   resources: 
     limits:
-      cpu: 6
-      memory: 10G
+      cpu: 2
+      memory: 5G
     requests:
-      cpu: 6
-      memory: 10G
+      cpu: 2
+      memory: 5G
   securityContext: {}
   strategy:
     type: RollingUpdate
