@@ -2,7 +2,7 @@ name: dask_pyscenic image build
 
 on:
   push:
-    branches: [ "main", "scheduler_issue" ]
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
