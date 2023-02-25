@@ -121,7 +121,7 @@ worker:
   nodeSelector: {}
   portDashboard: 8790
   readinessProbe: {}
-  replicas: 26
+  replicas: 24
   resources: 
     limits:
       cpu: 1
