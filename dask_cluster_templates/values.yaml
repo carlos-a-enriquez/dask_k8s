@@ -85,10 +85,12 @@ scheduler:
 webUI:
   ingress:
     annotations: {}
-    enabled: false
-    hostname: dask-ui.example.com
+    enabled: true
+    ingressClassName: nginx
+    hostname: dask-dsk.mooo.com
     pathType: Prefix
-    tls: false
+    tls: true
+    secretName: dask-tls
   name: webui
   servicePort: 80
 worker:
