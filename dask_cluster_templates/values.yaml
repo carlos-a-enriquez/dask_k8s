@@ -18,7 +18,7 @@ jupyter:
     tag: 2023.1.0
   ingress:
     annotations: 
-      ingress.kubernetes.io/proxy-body-size: 64m
+      nginx.ingress.kubernetes.io/proxy-body-size: 500m
     enabled: true
     ingressClassName: nginx
     hostname: jupyter-dsk.mooo.com
