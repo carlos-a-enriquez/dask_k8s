@@ -35,7 +35,7 @@ jupyter:
         mountPath: /home/jovyan/work # folder for storage
   name: jupyter
   nodeSelector: {}
-  password: sha1:aae8550c0a44:9507d45e087d5ee481a5ce9f4f16f37a0867318c
+  password: sha256:855482bc710a4354a743dcea944016148ebea621163202f06e165ee4c5ef76a4
   rbac: true
   readinessProbe: {}
   resources: 
