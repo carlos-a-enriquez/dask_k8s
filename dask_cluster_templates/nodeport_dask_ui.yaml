@@ -4,8 +4,8 @@ metadata:
   name: nodeport-dask-ui
   namespace: default
 spec:
-  externalIPs:
-  - 192.168.20.47
+  externalIPs: []
+  #- 192.168.20.47
   ports:
   - nodePort: 32050
     port: 80
