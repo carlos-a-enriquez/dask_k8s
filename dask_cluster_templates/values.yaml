@@ -17,7 +17,8 @@ jupyter:
     repository: ghcr.io/dask/dask-notebook
     tag: 2023.1.0
   ingress:
-    annotations: {}
+    annotations: 
+      ingress.kubernetes.io/proxy-body-size: 64m
     enabled: true
     ingressClassName: nginx
     hostname: jupyter-dsk.mooo.com
