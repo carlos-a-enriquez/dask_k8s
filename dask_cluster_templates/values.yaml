@@ -18,10 +18,12 @@ jupyter:
     tag: 2023.1.0
   ingress:
     annotations: {}
-    enabled: false
-    hostname: dask-jupyter.example.com
+    enabled: true
+    ingressClassName: nginx
+    hostname: jupyter-dsk.mooo.com
     pathType: Prefix
-    tls: false
+    tls: true
+    secretName: dask-tls
   livenessProbe: {}
   mounts: # Worker Pod volumes and volume mounts, mounts.volumes follows kuberentes api v1 Volumes spec. mounts.volumeMounts follows kubernetesapi v1 VolumeMount spec
     volumes:
