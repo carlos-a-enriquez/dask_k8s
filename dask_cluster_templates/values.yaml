@@ -7,6 +7,8 @@ jupyter:
   env:
     - name: EXTRA_PIP_PACKAGES
       value: pyscenic
+    - name: DATABASES_PATH
+      value: &jup_path "/home/jovyan/databases"
   extraConfig: |-
     # Extra Jupyter config goes here
     # E.g
@@ -38,7 +40,7 @@ jupyter:
       - name: dask-storage
         mountPath: /home/jovyan/work # folder for storage
       - name: dask-nfs-storage
-        mountPath: /home/jovyan/databases # database folder
+        mountPath: *jup_path # database folder
   name: jupyter
   nodeSelector: {}
   password: argon2:$argon2id$v=19$m=10240,t=10,p=8$UlwKTq+3lrh+Z3KSkPzr2g$BnZu0jtB8V+mbwD4Zt6GdzyTzhG9dXxvQDanCa3lXro
@@ -106,7 +108,9 @@ worker:
   default_resources:
     cpu: 1
     memory: 4GiB
-  env: null
+  env: 
+    - name: DATABASES_PATH
+      value: &worker_path "/root/databases"
   extraArgs: []
   image:
     dask_worker: dask-worker
@@ -133,7 +137,7 @@ worker:
           claimName: dask-nfs-claim
     volumeMounts:      
       - name: dask-nfs-storage
-        mountPath: /root/databases # database folder    
+        mountPath: *worker_path # database folder    
   name: worker
   nodeSelector: {}
   portDashboard: 8790
