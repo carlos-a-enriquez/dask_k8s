@@ -226,7 +226,7 @@ global:
 grafana:
   additionalDataSources: []
   admin:
-    existingSecret: ""
+    existingSecret: grafana-credentials
     passwordKey: admin-password
     userKey: admin-user
   adminPassword: prom-operator
