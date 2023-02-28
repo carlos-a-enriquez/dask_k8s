@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: dask-worker-nfs-claim
+  name: dask-nfs-claim
 spec:
   accessModes:
     - ReadWriteMany #can be used by a single node -ReadOnlyMany : for multiple nodes -ReadWriteMany: read/written to/by many nodes

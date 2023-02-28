@@ -33,7 +33,7 @@ jupyter:
           claimName: dask-pv-claim
       - name: dask-nfs-storage
         persistentVolumeClaim:
-          claimName: jupyter-nfs-claim
+          claimName: dask-nfs-claim
     volumeMounts:
       - name: dask-storage
         mountPath: /home/jovyan/work # folder for storage
@@ -130,7 +130,7 @@ worker:
     volumes:
       - name: dask-nfs-storage
         persistentVolumeClaim:
-          claimName: dask-worker-nfs-claim
+          claimName: dask-nfs-claim
     volumeMounts:      
       - name: dask-nfs-storage
         mountPath: /root/databases # database folder    
