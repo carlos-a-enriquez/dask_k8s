@@ -126,7 +126,14 @@ worker:
       namespace: ""
       namespaceSelector: {}
       podTargetLabels: []
-  mounts: {}    
+  mounts: 
+    volumes:
+      - name: dask-nfs-storage
+        persistentVolumeClaim:
+          claimName: dask-worker-nfs-claim
+    volumeMounts:      
+      - name: dask-nfs-storage
+        mountPath: /root/databases # database folder    
   name: worker
   nodeSelector: {}
   portDashboard: 8790

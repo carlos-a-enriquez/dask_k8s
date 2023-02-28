@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: dask-worker-nfs-claim
+spec:
+  accessModes:
+    - ReadWriteMany #can be used by a single node -ReadOnlyMany : for multiple nodes -ReadWriteMany: read/written to/by many nodes
+  storageClassName: nfs-class
+  volumeMode: Filesystem
+  volumeName: nfs-dask
+  resources: # https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes
+    requests:
+      storage: 6Gi
+  selector:
+    matchLabels:
+      app: dask-helm-chart
