@@ -31,9 +31,14 @@ jupyter:
       - name: dask-storage
         persistentVolumeClaim:
           claimName: dask-pv-claim
+      - name: dask-nfs-storage
+        persistentVolumeClaim:
+          claimName: jupyter-nfs-claim
     volumeMounts:
       - name: dask-storage
         mountPath: /home/jovyan/work # folder for storage
+      - name: dask-nfs-storage
+        mountPath: /home/jovyan/databases # database folder
   name: jupyter
   nodeSelector: {}
   password: argon2:$argon2id$v=19$m=10240,t=10,p=8$UlwKTq+3lrh+Z3KSkPzr2g$BnZu0jtB8V+mbwD4Zt6GdzyTzhG9dXxvQDanCa3lXro
