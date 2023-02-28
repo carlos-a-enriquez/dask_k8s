@@ -8,7 +8,7 @@ jupyter:
     - name: EXTRA_PIP_PACKAGES
       value: pyscenic
     - name: DATABASES_PATH
-      value: &jup_path "/home/jovyan/databases"
+      value: &jup_path "/mnt/databases"
   extraConfig: |-
     # Extra Jupyter config goes here
     # E.g
@@ -110,7 +110,7 @@ worker:
     memory: 4GiB
   env: 
     - name: DATABASES_PATH
-      value: &worker_path "/root/databases"
+      value: &worker_path "/mnt/databases"
   extraArgs: []
   image:
     dask_worker: dask-worker
