@@ -11,3 +11,6 @@ spec:
   resources: # https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes
     requests:
       storage: 6Gi
+  selector:
+    matchLabels:
+      app: dask-helm-chart
