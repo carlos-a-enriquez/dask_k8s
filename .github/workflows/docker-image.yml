@@ -1,12 +1,14 @@
 name: dask_pyscenic image build
 
 on:
-  #push:
-  #  branches: [ "main", "PBMC-env" ]
-  pull_request:
-    branches: [ "main" ]
   issue_comment:
     types: [ "created" ]
+  pull_request:
+    branches: [ "main" ]
+  #push:
+  #  branches: [ "main", "PBMC-env" ]
+  
+  
 
 jobs:
 
