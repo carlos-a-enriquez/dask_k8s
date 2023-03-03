@@ -6,8 +6,8 @@ jupyter:
   command: null
   enabled: true
   env:
-    - name: EXTRA_PIP_PACKAGES
-      value: pyscenic
+    #- name: EXTRA_PIP_PACKAGES
+    #  value: pyscenic
     - name: DATABASES_PATH
       value: &jup_path "/mnt/databases"
   extraConfig: |-
@@ -17,8 +17,8 @@ jupyter:
   image:
     pullPolicy: IfNotPresent
     pullSecrets: null
-    repository: ghcr.io/dask/dask-notebook
-    tag: 2023.1.0
+    repository: carloskez/dask_jupyter@sha256
+    tag: c12c5959be51ad6a337732d6b80a2fd04c18cbc85ad74d84781b49817f731e63
   ingress:
     annotations: 
       nginx.ingress.kubernetes.io/proxy-body-size: 500m
