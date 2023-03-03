@@ -2,7 +2,7 @@ name: dask_pyscenic image build
 
 on:
   issue_comment:
-    types: [ "created" ]
+    #types: [ "created" ]
   pull_request:
     branches: [ "main" ]
   #push:
