@@ -1,0 +1,6 @@
+LABEL dataset=PBMC
+FROM ghcr.io/dask/dask-notebook
+RUN conda install -y -c conda-forge matplotlib seaborn
+
+RUN python -m pip install scanpy==1.9.3
+RUN python -m pip install pyscenic==0.12.1

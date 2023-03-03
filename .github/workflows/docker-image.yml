@@ -2,7 +2,7 @@ name: dask_pyscenic image build
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "PBMC-env" ]
   pull_request:
     branches: [ "main" ]
 
@@ -29,3 +29,14 @@ jobs:
       run: docker build ./container_images/dask_base_pyscenic_debug/. --file ./container_images/dask_base_pyscenic_debug/Dockerfile --tag carloskez/dask_pyscenic:debug
     - name: Push the image to Dockerhub
       run: docker login -u carloskez -p ${{secrets.DOCKER_TOKEN}} && docker push carloskez/dask_pyscenic:debug
+
+  build_jupyter:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
+    - name: Build the Docker image
+      run: docker build ./container_images/dask-jupyter_pyscenic/. --file ./container_images/dask-jupyter_pyscenic/Dockerfile --tag carloskez/dask_jupyter:PBMC
+    - name: Push the image to Dockerhub
+      run: docker login -u carloskez -p ${{secrets.DOCKER_TOKEN}} && docker push carloskez/dask_jupyter:PBMC

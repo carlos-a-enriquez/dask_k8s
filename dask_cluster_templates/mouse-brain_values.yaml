@@ -1,0 +1,157 @@
+# Meant to be used to analyze the mouse brain dataset
+additional_worker_groups: []
+jupyter:
+  affinity: {}
+  args: null
+  command: null
+  enabled: true
+  env:
+    - name: EXTRA_PIP_PACKAGES
+      value: pyscenic
+    - name: DATABASES_PATH
+      value: &jup_path "/mnt/databases"
+  extraConfig: |-
+    # Extra Jupyter config goes here
+    # E.g
+    # c.NotebookApp.port = 8888
+  image:
+    pullPolicy: IfNotPresent
+    pullSecrets: null
+    repository: ghcr.io/dask/dask-notebook
+    tag: 2023.1.0
+  ingress:
+    annotations: 
+      nginx.ingress.kubernetes.io/proxy-body-size: 500m
+    enabled: true
+    ingressClassName: nginx
+    hostname: jupyter-dsk.mooo.com
+    pathType: Prefix
+    tls: true
+    secretName: dask-tls
+  livenessProbe: {}
+  mounts: # Worker Pod volumes and volume mounts, mounts.volumes follows kuberentes api v1 Volumes spec. mounts.volumeMounts follows kubernetesapi v1 VolumeMount spec
+    volumes:
+      - name: dask-storage
+        persistentVolumeClaim:
+          claimName: dask-pv-claim
+      - name: dask-nfs-storage
+        persistentVolumeClaim:
+          claimName: dask-nfs-claim
+    volumeMounts:
+      - name: dask-storage
+        mountPath: /home/jovyan/work # folder for storage
+      - name: dask-nfs-storage
+        mountPath: *jup_path # database folder
+  name: jupyter
+  nodeSelector: {}
+  password: argon2:$argon2id$v=19$m=10240,t=10,p=8$UlwKTq+3lrh+Z3KSkPzr2g$BnZu0jtB8V+mbwD4Zt6GdzyTzhG9dXxvQDanCa3lXro
+  rbac: true
+  readinessProbe: {}
+  resources: 
+    limits:
+        cpu: 1
+        memory: 5G
+    requests:
+        cpu: 1
+        memory: 5G
+  securityContext: {}
+  serviceAccountName: dask-jupyter
+  servicePort: 80
+  serviceType: ClusterIP
+  tolerations: []
+scheduler:
+  affinity: {}
+  enabled: true
+  extraArgs: []
+  image:
+    pullPolicy: IfNotPresent
+    pullSecrets: null
+    repository: carloskez/dask_pyscenic@sha256
+    tag: e16a3b9333712e69ee0cee9d769f8f01d82c65317d21ffe5397af26f15ea0743 #debug image
+  livenessProbe: {}
+  loadBalancerIP: null
+  metrics:
+    enabled: true
+    serviceMonitor:
+      additionalLabels: {}
+      enabled: false
+      interval: 30s
+      jobLabel: ""
+      metricRelabelings: []
+      namespace: ""
+      namespaceSelector: {}
+      targetLabels: []
+  name: scheduler
+  nodeSelector: {}
+  readinessProbe: {}
+  replicas: 1
+  resources: {}
+  securityContext: {}
+  serviceAnnotations: {}
+  servicePort: 8786
+  serviceType: ClusterIP
+  tolerations: []
+webUI:
+  ingress:
+    annotations: {}
+    enabled: true
+    ingressClassName: nginx
+    hostname: dask-dsk.mooo.com
+    pathType: Prefix
+    tls: true
+    secretName: dask-tls
+  name: webui
+  servicePort: 80
+worker:
+  affinity: {}
+  annotations: {}
+  custom_scheduler_url: null
+  default_resources:
+    cpu: 1
+    memory: 4GiB
+  env: 
+    - name: DATABASES_PATH
+      value: &worker_path "/mnt/databases"
+  extraArgs: []
+  image:
+    dask_worker: dask-worker
+    pullPolicy: IfNotPresent
+    pullSecrets: null
+    repository: carloskez/dask_pyscenic@sha256
+    tag: e16a3b9333712e69ee0cee9d769f8f01d82c65317d21ffe5397af26f15ea0743 #debug image
+  livenessProbe: {}
+  metrics:
+    enabled: true
+    podMonitor:
+      additionalLabels: {}
+      enabled: false
+      interval: 30s
+      jobLabel: ""
+      metricRelabelings: []
+      namespace: ""
+      namespaceSelector: {}
+      podTargetLabels: []
+  mounts: 
+    volumes:
+      - name: dask-nfs-storage
+        persistentVolumeClaim:
+          claimName: dask-nfs-claim
+    volumeMounts:      
+      - name: dask-nfs-storage
+        mountPath: *worker_path # database folder    
+  name: worker
+  nodeSelector: {}
+  portDashboard: 8790
+  readinessProbe: {}
+  replicas: 4
+  resources: 
+    limits:
+      cpu: 6
+      memory: 10G
+    requests:
+      cpu: 6
+      memory: 10G
+  securityContext: {}
+  strategy:
+    type: RollingUpdate
+  tolerations: []

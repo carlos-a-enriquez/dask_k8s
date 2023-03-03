@@ -1,3 +1,4 @@
+# Meant to be used to analyze the PBMC dataset
 additional_worker_groups: []
 jupyter:
   affinity: {}
