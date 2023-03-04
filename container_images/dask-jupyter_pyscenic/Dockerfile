@@ -1,4 +1,4 @@
-FROM ghcr.io/dask/dask-notebook
+FROM ghcr.io/dask/dask-notebook:2023.1.0
 LABEL dataset=PBMC
 
 RUN conda install -y conda==23.1.0
