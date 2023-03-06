@@ -146,11 +146,11 @@ worker:
   replicas: 4
   resources: 
     limits:
-      cpu: 6
-      memory: 3.4G
+      cpu: 7
+      memory: 5.7G
     requests:
       cpu: 6
-      memory: 3.4G
+      memory: 5.7G
   securityContext: {}
   strategy:
     type: RollingUpdate
