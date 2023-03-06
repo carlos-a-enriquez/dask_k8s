@@ -18,7 +18,7 @@ jupyter:
     pullPolicy: IfNotPresent
     pullSecrets: null
     repository: carloskez/dask_jupyter@sha256
-    tag: fcefd0df9beb57bedd8f231c6506208e691ad83854fb66afb5dc9229b88be787
+    tag: a3d8fe07a789ee18e448621781c758f0d63836c861f8fe1c824082a37cb57034
   ingress:
     annotations: 
       nginx.ingress.kubernetes.io/proxy-body-size: 500m
@@ -67,7 +67,7 @@ scheduler:
     pullPolicy: IfNotPresent
     pullSecrets: null
     repository: carloskez/dask_pyscenic@sha256
-    tag: 8c0065cb120a2c5f7ac7eb985be68a1227e6ed0b12771f356739f95f86d66f37 #debug image
+    tag: 235f4356fc5beb58d1b57772beb3e041a46f577a07e619840dc320f91f5ff5eb #debug image
   livenessProbe: {}
   loadBalancerIP: null
   metrics:
@@ -118,7 +118,7 @@ worker:
     pullPolicy: IfNotPresent
     pullSecrets: null
     repository: carloskez/dask_pyscenic@sha256
-    tag: 8c0065cb120a2c5f7ac7eb985be68a1227e6ed0b12771f356739f95f86d66f37 #debug image
+    tag: 235f4356fc5beb58d1b57772beb3e041a46f577a07e619840dc320f91f5ff5eb #debug image
   livenessProbe: {}
   metrics:
     enabled: true
@@ -143,14 +143,14 @@ worker:
   nodeSelector: {}
   portDashboard: 8790
   readinessProbe: {}
-  replicas: 24
+  replicas: 4
   resources: 
     limits:
-      cpu: 1
-      memory: 2.3G
+      cpu: 6
+      memory: 8G
     requests:
-      cpu: 1
-      memory: 2.3G
+      cpu: 6
+      memory: 8G
   securityContext: {}
   strategy:
     type: RollingUpdate
