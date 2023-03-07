@@ -50,7 +50,7 @@ jupyter:
   resources: 
     limits:
         cpu: 2
-        memory: 10G
+        memory: 15G
     requests:
         cpu: 1
         memory: 5G
@@ -146,11 +146,11 @@ worker:
   replicas: 4
   resources: 
     limits:
-      cpu: 7
-      memory: 5.7G
+      cpu: 6
+      memory: 10G
     requests:
       cpu: 6
-      memory: 5.7G
+      memory: 10G
   securityContext: {}
   strategy:
     type: RollingUpdate
