@@ -50,7 +50,7 @@ jupyter:
   resources: 
     limits:
         cpu: 2
-        memory: 15G
+        memory: 10G
     requests:
         cpu: 1
         memory: 4G
@@ -143,7 +143,7 @@ worker:
   nodeSelector: {}
   portDashboard: 8790
   readinessProbe: {}
-  replicas: 0
+  replicas: 4
   resources: 
     limits:
       cpu: 6
