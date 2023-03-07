@@ -50,10 +50,10 @@ jupyter:
   resources: 
     limits:
         cpu: 2
-        memory: 15G
+        memory: 10G
     requests:
         cpu: 1
-        memory: 5G
+        memory: 4G
   securityContext: {}
   serviceAccountName: dask-jupyter
   servicePort: 80
@@ -71,7 +71,7 @@ scheduler:
   livenessProbe: {}
   loadBalancerIP: null
   metrics:
-    enabled: true
+    enabled: false
     serviceMonitor:
       additionalLabels: {}
       enabled: false
@@ -121,7 +121,7 @@ worker:
     tag: 235f4356fc5beb58d1b57772beb3e041a46f577a07e619840dc320f91f5ff5eb #debug image
   livenessProbe: {}
   metrics:
-    enabled: true
+    enabled: false
     podMonitor:
       additionalLabels: {}
       enabled: false
