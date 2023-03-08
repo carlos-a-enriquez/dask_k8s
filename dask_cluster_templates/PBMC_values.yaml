@@ -143,14 +143,14 @@ worker:
   nodeSelector: {}
   portDashboard: 8790
   readinessProbe: {}
-  replicas: 7
+  replicas: 11
   resources: 
     limits:
       cpu: 1
-      memory: 7.5G
+      memory: 5G
     requests:
       cpu: 1
-      memory: 7.5G
+      memory: 5G
   securityContext: {}
   strategy:
     type: RollingUpdate
