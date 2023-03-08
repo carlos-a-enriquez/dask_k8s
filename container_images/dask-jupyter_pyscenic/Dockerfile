@@ -8,4 +8,4 @@ RUN conda install -y conda==23.1.0 \
 && find /opt/conda/ -follow -type f -name '*.pyc' -delete \
 && find /opt/conda/ -follow -type f -name '*.js.map' -delete 
 
-RUN python -m pip install scanpy==1.9.3 pyarrow==8.0.0 pyscenic==0.12.0
+RUN python -m pip install scanpy==1.9.3 pyarrow==8.0.0 pyscenic==0.12.1
