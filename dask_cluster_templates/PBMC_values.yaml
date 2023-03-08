@@ -18,7 +18,7 @@ jupyter:
     pullPolicy: IfNotPresent
     pullSecrets: null
     repository: carloskez/dask_jupyter@sha256
-    tag: 980171edac0c5f3a438124c25472e5c1ca87ef6bb92e5fa30e310c02dd1a3a8a
+    tag: c429bed44806ec0317913ff9d68e45b594122520f1ab0c713d2d7c8313d30c5e
   ingress:
     annotations: 
       nginx.ingress.kubernetes.io/proxy-body-size: 500m
