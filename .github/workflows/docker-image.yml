@@ -2,7 +2,7 @@ name: dask_pyscenic image build
 
 on:
   push:
-    branches: [ "main", "PBMC-env" ]
+    branches: [ "main" ]
     paths:
       - "container_images/**"
   #issue_comment:
