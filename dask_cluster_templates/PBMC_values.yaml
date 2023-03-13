@@ -49,10 +49,10 @@ jupyter:
   readinessProbe: {}
   resources: 
     limits:
-        cpu: 2
-        memory: 10G
+        cpu: 8
+        memory: 15G
     requests:
-        cpu: 1
+        cpu: 7
         memory: 4G
   securityContext: {}
   serviceAccountName: dask-jupyter
@@ -143,7 +143,7 @@ worker:
   nodeSelector: {}
   portDashboard: 8790
   readinessProbe: {}
-  replicas: 8
+  replicas: 0
   resources: 
     limits:
       cpu: 1
