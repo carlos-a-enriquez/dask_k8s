@@ -18,7 +18,7 @@ jupyter:
     pullPolicy: IfNotPresent
     pullSecrets: null
     repository: carloskez/dask_jupyter@sha256
-    tag: c429bed44806ec0317913ff9d68e45b594122520f1ab0c713d2d7c8313d30c5e
+    tag: 8a379f45cc4ae87cb272f1ac7c8045e311680b9fed8ce0312e405ada3d82d531
   ingress:
     annotations: 
       nginx.ingress.kubernetes.io/proxy-body-size: 500m
@@ -67,7 +67,7 @@ scheduler:
     pullPolicy: IfNotPresent
     pullSecrets: null
     repository: carloskez/dask_pyscenic@sha256
-    tag: 744a372509c8dea7d4902d0342bd4933539bd58fa05898eae36020afb57140cb #debug image
+    tag: a55155b49c3ab66a40dc5f6d07fd2e1c417275560de62c87ba0c4394ac9a7c31 #debug image
   livenessProbe: {}
   loadBalancerIP: null
   metrics:
@@ -118,7 +118,7 @@ worker:
     pullPolicy: IfNotPresent
     pullSecrets: null
     repository: carloskez/dask_pyscenic@sha256
-    tag: 744a372509c8dea7d4902d0342bd4933539bd58fa05898eae36020afb57140cb #debug image
+    tag: a55155b49c3ab66a40dc5f6d07fd2e1c417275560de62c87ba0c4394ac9a7c31 #debug image
   livenessProbe: {}
   metrics:
     enabled: false
