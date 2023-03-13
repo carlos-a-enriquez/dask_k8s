@@ -18,7 +18,7 @@ jupyter:
     pullPolicy: IfNotPresent
     pullSecrets: null
     repository: carloskez/dask_jupyter@sha256
-    tag: 8a379f45cc4ae87cb272f1ac7c8045e311680b9fed8ce0312e405ada3d82d531
+    tag: fadc69b2139b2ccc6340f1a85504040aec78097f948953f5bfcbb15a1c6a8718 #jupyter image
   ingress:
     annotations: 
       nginx.ingress.kubernetes.io/proxy-body-size: 500m
@@ -67,7 +67,7 @@ scheduler:
     pullPolicy: IfNotPresent
     pullSecrets: null
     repository: carloskez/dask_pyscenic@sha256
-    tag: a55155b49c3ab66a40dc5f6d07fd2e1c417275560de62c87ba0c4394ac9a7c31 #debug image
+    tag: a4f0573bafbeda6fbc3cf604221739b798ccea88017cf3ec806331b8ea337ce0 #debug image
   livenessProbe: {}
   loadBalancerIP: null
   metrics:
@@ -118,7 +118,7 @@ worker:
     pullPolicy: IfNotPresent
     pullSecrets: null
     repository: carloskez/dask_pyscenic@sha256
-    tag: a55155b49c3ab66a40dc5f6d07fd2e1c417275560de62c87ba0c4394ac9a7c31 #debug image
+    tag: a4f0573bafbeda6fbc3cf604221739b798ccea88017cf3ec806331b8ea337ce0 #debug image
   livenessProbe: {}
   metrics:
     enabled: false
@@ -143,7 +143,7 @@ worker:
   nodeSelector: {}
   portDashboard: 8790
   readinessProbe: {}
-  replicas: 0
+  replicas: 1
   resources: 
     limits:
       cpu: 1
