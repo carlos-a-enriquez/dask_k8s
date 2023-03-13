@@ -2,7 +2,7 @@ FROM ghcr.io/dask/dask-notebook:2023.1.0
 LABEL dataset=PBMC
 
 RUN conda install -y conda==23.1.0 \
-&& conda install -y -c conda-forge matplotlib seaborn \
+&& conda install -y -c conda-forge matplotlib seaborn multicore-tsne \
 && conda clean -afy \
 && find /opt/conda/ -follow -type f -name '*.a' -delete \
 && find /opt/conda/ -follow -type f -name '*.pyc' -delete \
