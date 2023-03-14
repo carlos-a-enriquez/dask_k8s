@@ -147,10 +147,10 @@ worker:
   resources: 
     limits:
       cpu: 7
-      memory: 5G
+      memory: 5.7G
     requests:
       cpu: 6
-      memory: 5G
+      memory: 5.7G
   securityContext: {}
   strategy:
     type: RollingUpdate
