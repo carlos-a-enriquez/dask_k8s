@@ -49,7 +49,7 @@ jupyter:
   readinessProbe: {}
   resources: 
     limits:
-        cpu: 2
+        cpu: 6
         memory: 15G
     requests:
         cpu: 1
@@ -143,14 +143,14 @@ worker:
   nodeSelector: {}
   portDashboard: 8790
   readinessProbe: {}
-  replicas: 4
+  replicas: 8
   resources: 
     limits:
-      cpu: 7
-      memory: 5.7G
+      cpu: 1
+      memory: 6G
     requests:
-      cpu: 6
-      memory: 5.7G
+      cpu: 1
+      memory: 6G
   securityContext: {}
   strategy:
     type: RollingUpdate
