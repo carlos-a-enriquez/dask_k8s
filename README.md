@@ -17,7 +17,7 @@ The Dask base [image][1] and the dask-notebook [image][2] were modified to be ab
 
 
 ## 3. Example notebooks
-To test the execution of [pySCENIC][4], the mouse brain dataset and the PBMC dataset were used. The custom notebooks adapted from the ["SCENIC" protocol][3] repository can be found [here](./project/SCENIC%20Protocol%20-%20Case%20study%20-%20Mouse%20brain%20data%20set.ipynb) and [here](./PBMC_project/PBMC10k_SCENIC_custom-polished-version.ipynb). 
+To test the execution of [pySCENIC][4], the mouse brain dataset and the PBMC dataset were used. The custom notebooks adapted from the ones that were published in the ["SCENIC" protocol][3] repository can be found [here](./project/SCENIC%20Protocol%20-%20Case%20study%20-%20Mouse%20brain%20data%20set.ipynb) and [here](./PBMC_project/PBMC10k_SCENIC_custom-polished-version.ipynb). 
 
 
 [1]: ghcr.io/dask/dask
