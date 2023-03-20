@@ -5,6 +5,7 @@ on:
     branches: [ "main" ]
     paths:
       - "container_images/**"
+      - "!container_images/README.md"
   #issue_comment:
     #types: [ "created" ]
   pull_request:
