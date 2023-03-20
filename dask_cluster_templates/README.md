@@ -55,15 +55,20 @@ helm repo update
 helm install --version 2023.1.0 myrelease dask/dask
 ```
 
-### 1. To prepare volumes for Jupyter notebook
-This values.yaml configuration assumes the availability of persistence volumes for the dask-notebook pod. 
-Follow the [volume template guide](./dask_volume_templates/README.md) to setup the volumes in advance.
+### 1. To prepare volumes for persistent storage. 
+The helm values configuration assumes the availability of persistent volumes. 
+
+#### a. Creating a local volume for persistent Jupyter notebook storage
+Follow the [volume template guide](./dask_volume_templates/README.md) to setup the volume in advance.
+
+#### b. Creating an NFS volume for shared storage between Dask workers and the Jupyter notebook. 
+Files that are too large to be moved through the network during Dask execution may be made accessible using a system like NFS. The NFS volume can be mounted in both the Jupyter notebook and the Dask workers in order to ensure consistency. Follow the [NFS volume template guide](./worker-jupyter_nfs/README.md) to set the NFS volume in advance. 
 
 ### 2. Setting up NodePorts for external access. 
 This repository contains two NodePort templates for accessing the [JupyterLab GUI](./nodeport_jupyter.yaml) and the [Dask dashboard](./nodeport_dask_ui.yaml). The alternative is to use port forwarding as described
 in the Helm Chart documentation. 
 
-An even better alternative is to use an [ingress](#ingress-controller-setup), as was used in this case.  
+An even better alternative is to use an [ingress](#ingress-controller-setup). In fact, the corresponding values [file](./PBMC_values.yaml) assumes that access to the cluster will occur through the ingress. 
 
 ```bash
 #Adding nodeport 
@@ -98,9 +103,22 @@ dask/dask
 #For upgrading
 helm upgrade \
 --version 2023.1.0 \
---values values.yaml \
+--values PBMC_values.yaml \
 myrelease \
 dask/dask
+```
+
+## Jupyter notebook setup
+
+### 1. Setting up a password
+Run the following commands from the notebook's command line to setup a custom password. Change the corresponding hash value in the Helm values [file](./PBMC_values.yaml). 
+
+```bash
+#Creating a password hash
+jupyter notebook password
+
+#Obtaining the password hash
+cat /home/dask/.jupyter/jupyter_notebook_config.json
 ```
 
 
