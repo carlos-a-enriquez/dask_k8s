@@ -1,5 +1,5 @@
 # Prometheus setup
-Setting up the promethesus helm chart for monitoring the Dask job scheduling and execution. 
+Setting up the promethesus helm chart for monitoring the Dask job scheduling and execution. As an alternative, use the Prometheus stack helm chart, as explained [here](../prometheus_stack/README.md)
 
 # 1. Setting the PVs for Prometheus server and alertmonitor
 First, create the respective local folders and make them available. Then, create the resources 

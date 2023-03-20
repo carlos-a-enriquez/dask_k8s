@@ -8,14 +8,14 @@ Follow the RKE2 [quick start guide][1]
 The ingress option was preferred over NodePorts and port forwarding in order to manage TLS termination (https connections)independently of the deployment or service involved. Note that TLS termination steps are optional.
 
 ### 1. Create an nginx ingress controller deployment
-Before setting any ingress rules for any of Dask or monitoring deployment, the ingress controller must be installed. The usual nginx controller repository contains several [guides][3] and alternatives. In this case, the "baremetal" option is chosen since this cluster is not related to any mainstream cloud vendor. 
+Before setting any ingress rules for any of Dask or monitoring deployment, the ingress controller must be installed. The usual nginx controller repository contains several [guides][3] and alternatives. In this case, the "baremetal" option is chosen since this cluster is not related to any mainstream cloud vendor. The deployment file is also found in this repository ([here](../prometheus_templates/prometheus_stack/nginx_ingress_deploy.yaml)). 
 
 ```bash
 #Installing the controller
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.6.4/deploy/static/provider/baremetal/deploy.yaml
 ```
 
-Check that it [works][4].
+Check that it [works][4]. 
 
 ### 2. Create a domain or subdomain
 Main steps:
