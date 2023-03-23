@@ -264,7 +264,7 @@ grafana:
     tag: 7.85.0
   enableKubeBackwardCompatibility: false
   enableServiceLinks: true
-  enabled: true
+  enabled: false
   env: {}
   envFromConfigMaps: []
   envFromSecret: ""
@@ -919,7 +919,7 @@ kubelet:
 nameOverride: ""
 namespaceOverride: ""
 nodeExporter:
-  enabled: true
+  enabled: false
 prometheus:
   additionalPodMonitors: []
   additionalRulesForClusterRole: []
