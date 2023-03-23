@@ -925,7 +925,7 @@ prometheus:
   additionalRulesForClusterRole: []
   additionalServiceMonitors: []
   annotations: {}
-  enabled: true
+  enabled: false
   extraSecret:
     annotations: {}
     data: {}
