@@ -1,0 +1,4 @@
+                                                                                Initializing installer
+                                                                                INFO: Installer initialized
+                                                                                Retrieving cluster configuration
+                                                                                INFO: No cluster name specified. Generated: "wispy-bird"                                                                                ERRO: Error retrieving configuration: failed validating Pod CIDR "10.42.0.0/16": pod "testvk" does not match the provided Pod CIDR (IP: 127.0.0.1). Try setting the correct Pod CIDR using the vanilla *liqoctl install* command, or installing Liqo with Helm
