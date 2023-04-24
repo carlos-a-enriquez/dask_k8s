@@ -23,7 +23,7 @@ auth:
             requests: {}
     service:
         annotations: {}
-        type: LoadBalancer
+        type: NodePort
     tls: true
 awsConfig:
     accessKeyId: ""
@@ -102,7 +102,7 @@ gateway:
     replicas: 1
     service:
         annotations: {}
-        type: LoadBalancer
+        type: NodePort
 metricAgent:
     enable: true
     imageName: ghcr.io/liqotech/metric-agent
