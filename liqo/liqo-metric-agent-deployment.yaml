@@ -44,6 +44,8 @@ spec:
           volumeMounts:
             - mountPath: '/certs'
               name: certs
+            - mountPath: '/tmp'
+              name: config-volume
           command: [ "/usr/bin/openssl" ]
           args:
             - req
@@ -82,8 +84,6 @@ spec:
           volumeMounts:
             - mountPath: '/certs'
               name: certs
-            - mountPath: '/tmp'
-              name: config-volume
       volumes:
         - name: certs
           emptyDir: {}
