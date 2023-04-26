@@ -1,0 +1,98 @@
+# Source: liqo/templates/liqo-auth-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: liqo-auth
+  labels:
+    app.kubernetes.io/name: "auth"
+    app.kubernetes.io/instance: "liqo-auth"
+    app.kubernetes.io/component: "discovery"
+    app.kubernetes.io/part-of: "liqo"
+    helm.sh/chart: "liqo-v0.8.1"
+    app.kubernetes.io/version: "v0.8.1"
+    app.kubernetes.io/managed-by: "Helm"
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: "auth"
+      app.kubernetes.io/instance: "liqo-auth"
+      app.kubernetes.io/component: "discovery"
+      app.kubernetes.io/part-of: "liqo"
+      run: auth-service
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: "auth"
+        app.kubernetes.io/instance: "liqo-auth"
+        app.kubernetes.io/component: "discovery"
+        app.kubernetes.io/part-of: "liqo"
+        run: auth-service
+    spec:
+      securityContext:
+
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+      serviceAccountName: liqo-auth
+      initContainers:
+        - name: cert-creator
+          imagePullPolicy: IfNotPresent
+          securityContext:
+            allowPrivilegeEscalation: false
+          image: ghcr.io/liqotech/cert-creator:v0.8.1
+          volumeMounts:
+            - mountPath: '/certs'
+              name: certs
+          command: [ "/usr/bin/openssl" ]
+          args:
+            - req
+            - -x509
+            - -subj
+            - /C=IT/ST=Turin/O=Liqo
+            - -nodes
+            - -days
+            - "365"
+            - -newkey
+            - rsa:4096
+            - -keyout
+            - /certs/key.pem
+            - -out
+            - /certs/cert.pem
+          resources:
+            limits: {}
+            requests: {}
+      containers:
+        - image: ghcr.io/liqotech/auth-service:v0.8.1
+          securityContext:
+            allowPrivilegeEscalation: false
+          name: auth
+          imagePullPolicy: IfNotPresent
+          command: ["/usr/bin/auth-service"]
+          args:
+          - --cluster-id=$(CLUSTER_ID)
+          - --cluster-name=divine-waterfall
+          - --namespace=$(POD_NAMESPACE)
+          - --address=:8443
+          - --enable-tls
+          - --enable-authentication=true
+          - --advertise-api-server-address=https://131.154.96.42:6443
+          env:
+            - name: CLUSTER_ID
+              valueFrom:
+                configMapKeyRef:
+                  name: liqo-clusterid-configmap
+                  key: CLUSTER_ID
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+          resources:
+            limits: {}
+            requests: {}
+          volumeMounts:
+            - mountPath: '/certs'
+              name: certs
+      volumes:
+        - name: certs
+          emptyDir: {}

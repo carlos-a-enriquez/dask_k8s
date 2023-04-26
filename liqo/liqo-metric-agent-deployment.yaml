@@ -1,0 +1,97 @@
+# Source: liqo/templates/liqo-metric-agent-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: liqo-metric-agent
+  labels:
+    app.kubernetes.io/name: "metric-agent"
+    app.kubernetes.io/instance: "liqo-metric-agent"
+    app.kubernetes.io/component: "metrics"
+    app.kubernetes.io/part-of: "liqo"
+    helm.sh/chart: "liqo-v0.8.1"
+    app.kubernetes.io/version: "v0.8.1"
+    app.kubernetes.io/managed-by: "Helm"
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: "metric-agent"
+      app.kubernetes.io/instance: "liqo-metric-agent"
+      app.kubernetes.io/component: "metrics"
+      app.kubernetes.io/part-of: "liqo"
+      run: metric-agent
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: "metric-agent"
+        app.kubernetes.io/instance: "liqo-metric-agent"
+        app.kubernetes.io/component: "metrics"
+        app.kubernetes.io/part-of: "liqo"
+        run: metric-agent
+    spec:
+      securityContext:
+
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+      serviceAccountName: liqo-metric-agent
+      initContainers:
+        - name: cert-creator
+          imagePullPolicy: IfNotPresent
+          securityContext:
+            allowPrivilegeEscalation: false
+          image: ghcr.io/liqotech/cert-creator:v0.8.1
+          volumeMounts:
+            - mountPath: '/certs'
+              name: certs
+          command: [ "/usr/bin/openssl" ]
+          args:
+            - req
+            - -x509
+            - -subj
+            - /C=IT/ST=Turin/O=Liqo
+            - -nodes
+            - -days
+            - "365"
+            - -newkey
+            - rsa:4096
+            - -keyout
+            - /certs/key.pem
+            - -out
+            - /certs/cert.pem
+            - -config
+            - /tmp/liqo-cert-req.conf
+            - -extensions
+            - v3_req
+          resources:
+            limits: {}
+            requests: {}
+      containers:
+        - image: ghcr.io/liqotech/metric-agent:v0.8.1
+          securityContext:
+            allowPrivilegeEscalation: false
+          name: metric-agent
+          imagePullPolicy: IfNotPresent
+          command: ["/usr/bin/metric-agent"]
+          args:
+          - --key-path=/certs/key.pem
+          - --cert-path=/certs/cert.pem
+          resources:
+            limits: {}
+            requests: {}
+          volumeMounts:
+            - mountPath: '/certs'
+              name: certs
+            - mountPath: '/tmp'
+              name: config-volume
+      volumes:
+        - name: certs
+          emptyDir: {}
+        - configMap:
+            defaultMode: 420
+            items:
+            - key: liqo-cert-req.conf
+              path: liqo-cert-req.conf
+            name: san-liqo-metric 
+          name: config-volume 
+        

@@ -17,5 +17,5 @@ data:
 
 kind: ConfigMap 
 metadata: 
-  name: san-liqo 
+  name: san-liqo-metric 
   namespace: liqo
