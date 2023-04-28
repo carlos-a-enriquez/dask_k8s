@@ -15,6 +15,21 @@ auth:
         host: ""
     initContainer:
         imageName: ghcr.io/liqotech/cert-creator
+        mounts:
+          volumes:
+            - configMap:
+                defaultMode: 420
+                items:
+                - key: liqo-cert-req.conf
+                  path: liqo-cert-req.conf
+                name: san-liqo-auth
+              name: config-volume
+          volumeMounts:
+            - mountPath: '/tmp'
+              name: config-volume
+        extraArgs:
+          - "something"
+          - "else"
     pod:
         annotations: {}
         extraArgs: []
