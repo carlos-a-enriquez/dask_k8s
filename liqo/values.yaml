@@ -3,7 +3,7 @@ apiServer:
     trustedCA: false
 auth:
     config:
-        addressOverride: ""
+        addressOverride: 131.154.96.42
         enableAuthentication: true
         portOverride: ""
     imageName: ghcr.io/liqotech/auth-service
