@@ -80,7 +80,7 @@ discovery:
 fullnameOverride: ""
 gateway:
     config:
-        addressOverride: ""
+        addressOverride: 131.154.96.42
         listeningPort: 5871
         portOverride: ""
         wireguardImplementation: kernel
