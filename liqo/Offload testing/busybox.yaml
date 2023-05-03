@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: testvk
+spec:
+  restartPolicy: OnFailure 
+  containers:
+  - image: busybox
+    command:
+      - sleep
+      - infinity 
+    imagePullPolicy: Always
+    name: busyecho
+  dnsPolicy: ClusterFirst
+  nodeSelector:
+    kubernetes.io/role: agent
+    beta.kubernetes.io/os: linux
+    liqo.io/type: virtual-node
+    kubernetes.io/hostname: liqo-solitary-breeze
+  tolerations:
+  #virtual-node.liqo.io/not-allowed=true:NoExecute
+  - key: virtual-node.liqo.io/not-allowed
+    operator: Exists
