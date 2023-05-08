@@ -1065,7 +1065,7 @@ prometheus:
       matchLabels:
         service_monitor_discover: yes-monitor
     serviceMonitorSelector: {}
-    serviceMonitorSelectorNilUsesHelmValues: true
+    serviceMonitorSelectorNilUsesHelmValues: false
     shards: 1
     storageSpec: 
       volumeClaimTemplate:
