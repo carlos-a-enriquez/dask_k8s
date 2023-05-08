@@ -86,10 +86,10 @@ gateway:
         wireguardImplementation: kernel
     imageName: ghcr.io/liqotech/liqonet
     metrics:
-        enabled: false
+        enabled: true
         port: 5872
         serviceMonitor:
-            enabled: false
+            enabled: true
             interval: ""
             scrapeTimeout: ""
     pod:
