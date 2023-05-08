@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    kubernetes.io/metadata.name: monitoring
+    service_monitor_discover: yes-monitor #added for service monitor discovery
+  name: monitoring
+spec:
+  finalizers:
+  - kubernetes
+status:
+  phase: Active
