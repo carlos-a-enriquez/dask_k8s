@@ -1061,7 +1061,9 @@ prometheus:
       runAsGroup: 2000
       runAsNonRoot: true
       runAsUser: 1000
-    serviceMonitorNamespaceSelector: {}
+    serviceMonitorNamespaceSelector: 
+      matchLabels:
+        service_monitor_discover: yes-monitor
     serviceMonitorSelector: {}
     serviceMonitorSelectorNilUsesHelmValues: true
     shards: 1
