@@ -57,11 +57,11 @@ jupyter:
   readinessProbe: {}
   resources: 
     limits:
-        cpu: 7
-        memory: 15G
+        cpu: 1
+        memory: 4G
     requests:
-        cpu: 7
-        memory: 15G
+        cpu: 1
+        memory: 4G
   securityContext: {}
   serviceAccountName: dask-jupyter
   servicePort: 80
