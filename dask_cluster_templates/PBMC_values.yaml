@@ -1,7 +1,15 @@
 # Meant to be used to analyze the PBMC dataset
 additional_worker_groups: []
 jupyter:
-  affinity: {}
+  affinity: 
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: liqo.io/type
+                operator: NotIn
+                values:
+                  - virtual-node
   args: null
   command: null
   enabled: true
@@ -60,7 +68,15 @@ jupyter:
   serviceType: ClusterIP
   tolerations: []
 scheduler:
-  affinity: {}
+  affinity: 
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: liqo.io/type
+                operator: NotIn
+                values:
+                  - virtual-node
   enabled: true
   extraArgs: []
   image:
@@ -84,7 +100,7 @@ scheduler:
   name: scheduler
   nodeSelector: {}
   readinessProbe: {}
-  replicas: 0
+  replicas: 1
   resources: {}
   securityContext: {}
   serviceAnnotations: {}
@@ -143,7 +159,7 @@ worker:
   nodeSelector: {}
   portDashboard: 8790
   readinessProbe: {}
-  replicas: 0
+  replicas: 8
   resources: 
     limits:
       cpu: 1
