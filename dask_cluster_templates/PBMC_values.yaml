@@ -84,7 +84,7 @@ scheduler:
   name: scheduler
   nodeSelector: {}
   readinessProbe: {}
-  replicas: 0
+  replicas: 1
   resources: {}
   securityContext: {}
   serviceAnnotations: {}
