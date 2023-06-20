@@ -49,7 +49,7 @@ jupyter:
   readinessProbe: {}
   resources: 
     limits:
-        cpu: 7
+        cpu: 2
         memory: 15G
     requests:
         cpu: 1
@@ -147,10 +147,10 @@ worker:
   resources: 
     limits:
       cpu: 1
-      memory: 14G
+      memory: 5.7G
     requests:
       cpu: 1
-      memory: 14G
+      memory: 5.7G
   securityContext: {}
   strategy:
     type: RollingUpdate
